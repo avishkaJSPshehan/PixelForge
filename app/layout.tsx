@@ -3,9 +3,21 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'PixelForge',
+  metadataBase: new URL('https://www.pixel-forge.online'),
+  title: 'PixelForge – Free Online PDF & Image Converter',
   description: 'Convert PDF pages to high-quality images or combine multiple images into a single PDF. Free, fast, and 100% private — all processing happens in your browser.',
-  keywords: ['PDF to image', 'image to PDF', 'PDF converter', 'PNG from PDF', 'free PDF tool'],
+  keywords: ['PDF to image', 'image to PDF', 'PDF converter', 'PNG from PDF', 'free PDF tool', 'merge PDF', 'split PDF', 'word to PDF', 'pptx to PDF', 'watermark PDF', 'html to PDF'],
+  alternates: {
+    canonical: 'https://www.pixel-forge.online/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

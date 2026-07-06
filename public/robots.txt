@@ -1,0 +1,13 @@
+# PixelForge - robots.txt
+# https://www.pixel-forge.online/
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Disallow Next.js internals
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.pixel-forge.online/sitemap.xml
