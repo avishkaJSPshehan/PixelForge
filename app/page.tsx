@@ -74,6 +74,14 @@ const tools = [
     title: 'URL to PDF',
     description: 'Paste any webpage URL and instantly convert it to a downloadable PDF.',
   },
+  {
+    href: '/page-numbers',
+    id: 'home-card-page-numbers',
+    icon: '🔢',
+    iconBg: 'tool-icon-teal',
+    title: 'Add Page Numbers',
+    description: 'Stamp page numbers at any position on every page of your PDF — free and browser-based.',
+  },
 ];
 
 export default function HomePage() {
