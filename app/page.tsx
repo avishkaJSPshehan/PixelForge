@@ -66,6 +66,14 @@ const tools = [
     title: 'PowerPoint to PDF',
     description: 'Convert PowerPoint (.pptx) slides to a PDF sequentially in your browser.',
   },
+  {
+    href: '/url-to-pdf',
+    id: 'home-card-url-to-pdf',
+    icon: '🔗',
+    iconBg: 'tool-icon-blue',
+    title: 'URL to PDF',
+    description: 'Paste any webpage URL and instantly convert it to a downloadable PDF.',
+  },
 ];
 
 export default function HomePage() {
