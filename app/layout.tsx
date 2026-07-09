@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Footer from '@/components/Footer';
 // @ts-ignore
 import './globals.css';
 
@@ -73,11 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="site-wrapper">
           {children}
-          <footer className="site-footer">
-            <p>
-              &copy; {new Date().getFullYear()} <span className="footer-brand">Bytebuilder</span>. All rights reserved.
-            </p>
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>
