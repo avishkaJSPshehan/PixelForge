@@ -84,7 +84,25 @@ const tools = [
     title: 'Add Page Numbers',
     description: 'Stamp page numbers at any position on PDF pages free — choose top, bottom, left, right.',
   },
+  {
+    href: '/excel-to-pdf',
+    id: 'home-card-excel-to-pdf',
+    icon: '📊',
+    iconBg: 'tool-icon-green',
+    title: 'Excel to PDF',
+    description: 'Convert Excel spreadsheets (.xlsx, .xls) to PDF online free — all sheets included, no sign-up.',
+  },
+  {
+    href: '/pdf-to-excel',
+    id: 'home-card-pdf-to-excel',
+    icon: '📋',
+    iconBg: 'tool-icon-green',
+    title: 'PDF to Excel',
+    description: 'Extract text and tables from PDF into a structured Excel spreadsheet (.xlsx) — free, browser-based.',
+  },
 ];
+
+
 
 /* ─── Features data ──────────────────────────────────────────────────────── */
 

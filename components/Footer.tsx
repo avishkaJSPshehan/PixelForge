@@ -1,16 +1,18 @@
 import Link from 'next/link';
 
 const convertLinks = [
-  { href: '/image-to-pdf', label: 'Image to PDF' },
-  { href: '/word-to-pdf',  label: 'Word to PDF' },
-  { href: '/pptx-to-pdf',  label: 'PowerPoint to PDF' },
-  { href: '/html-to-pdf',  label: 'HTML to PDF' },
-  { href: '/url-to-pdf',   label: 'URL to PDF' },
-  { href: '/pdf-to-image', label: 'PDF to JPG' },
-  { href: '/merge-pdf',    label: 'Merge PDF' },
-  { href: '/split-pdf',    label: 'Split PDF' },
-  { href: '/watermark-pdf',label: 'Watermark PDF' },
-  { href: '/page-numbers', label: 'Add Page Numbers' },
+  { href: '/image-to-pdf',  label: 'Image to PDF' },
+  { href: '/word-to-pdf',   label: 'Word to PDF' },
+  { href: '/excel-to-pdf',  label: 'Excel to PDF' },
+  { href: '/pdf-to-excel',  label: 'PDF to Excel' },
+  { href: '/pptx-to-pdf',   label: 'PowerPoint to PDF' },
+  { href: '/html-to-pdf',   label: 'HTML to PDF' },
+  { href: '/url-to-pdf',    label: 'URL to PDF' },
+  { href: '/pdf-to-image',  label: 'PDF to JPG' },
+  { href: '/merge-pdf',     label: 'Merge PDF' },
+  { href: '/split-pdf',     label: 'Split PDF' },
+  { href: '/watermark-pdf', label: 'Watermark PDF' },
+  { href: '/page-numbers',  label: 'Add Page Numbers' },
 ];
 
 const companyLinks = [
