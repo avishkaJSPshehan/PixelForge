@@ -2804,7 +2804,188 @@ input, textarea { font-family: inherit; }
   margin-top: 5px;
 }
 
+/* ===== PDF TO EXCEL ===== */
+
+/* Info cards on the idle screen */
+.p2e-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.p2e-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 16px;
+}
+
+.p2e-info-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.p2e-info-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.p2e-info-body {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Progress card */
+.p2e-progress-card {
+  padding: 48px 36px;
+  text-align: center;
+  margin-top: 24px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p2e-progress-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.p2e-progress-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.p2e-progress-sub {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.p2e-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.p2e-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.p2e-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.p2e-bar-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  width: 36px;
+  text-align: right;
+}
+
+/* Result preview card */
+.p2e-result-preview {
+  padding: 32px 28px;
+  text-align: center;
+}
+
+.p2e-result-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.p2e-result-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.p2e-result-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Sheet pills */
+.p2e-sheet-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.p2e-sheet-pill {
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(29, 167, 93, 0.1);
+  color: #1a7a4a;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(29, 167, 93, 0.2);
+}
+
+.p2e-sheet-pill--more {
+  background: var(--surface);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+@media (max-width: 680px) {
+  .p2e-info-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== EXCEL TO PDF – SHEET TABS ===== */
+.excel-sheet-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.excel-sheet-tab {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.excel-sheet-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.excel-sheet-tab--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
 /* ===== SITE WRAPPER ===== */
+
 
 .site-wrapper {
   display: flex;

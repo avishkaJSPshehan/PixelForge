@@ -18,6 +18,7 @@ const convertToPdf = [
 /** Items shown under "CONVERT FROM PDF" column */
 const convertFromPdf = [
   { href: '/pdf-to-image', label: 'PDF to Images', emoji: '📄' },
+  { href: '/pdf-to-excel', label: 'PDF to Excel',  emoji: '📊' },
 ];
 
 const allTools = [
@@ -26,10 +27,12 @@ const allTools = [
   { href: '/watermark-pdf', icon: '🔏', label: 'Watermark PDF' },
   { href: '/page-numbers',  icon: '🔢', label: 'Add Page Numbers' },
   { href: '/pdf-to-image',  icon: '📄', label: 'PDF to Images' },
+  { href: '/pdf-to-excel',  icon: '📊', label: 'PDF to Excel' },
   { href: '/image-to-pdf',  icon: '🖼️', label: 'Image to PDF' },
   { href: '/html-to-pdf',   icon: '🌐', label: 'HTML to PDF' },
   { href: '/url-to-pdf',    icon: '🔗', label: 'URL to PDF' },
   { href: '/word-to-pdf',   icon: '📝', label: 'Word to PDF' },
+  { href: '/excel-to-pdf',  icon: '📊', label: 'Excel to PDF' },
   { href: '/pptx-to-pdf',   icon: '📊', label: 'PowerPoint to PDF' },
 ];
 
