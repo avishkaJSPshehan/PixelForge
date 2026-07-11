@@ -1,5 +1,5 @@
 import { PDFDocument, rgb, degrees, StandardFonts } from 'pdf-lib';
-import fontkit from '@pdf-lib/fontkit';
+import * as fontkit from '@pdf-lib/fontkit';
 
 /**
  * Stamps a diagonal text watermark on every page of a PDF.
@@ -29,7 +29,8 @@ export async function watermarkPdf(
 
   let font;
   if (hasSinhala) {
-    pdfDoc.registerFontkit(fontkit);
+    // Next.js bundler compatibility for fontkit
+    pdfDoc.registerFontkit((fontkit as any).default || fontkit);
     // NotoSansSinhala.ttf is served from /public/fonts - same origin, no CORS.
     // It contains both Sinhala and Latin glyphs in a single file.
     const fontResponse = await fetch('/fonts/NotoSansSinhala.ttf');
