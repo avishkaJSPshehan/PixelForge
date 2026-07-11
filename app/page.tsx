@@ -100,6 +100,14 @@ const tools = [
     title: 'PDF to Excel',
     description: 'Extract text and tables from PDF into a structured Excel spreadsheet (.xlsx) - free, browser-based.',
   },
+  {
+    href: '/pdf-to-word',
+    id: 'home-card-pdf-to-word',
+    icon: '📝',
+    iconBg: 'tool-icon-blue',
+    title: 'PDF to Word',
+    description: 'Convert PDF files to Word documents (.docx) - extract text preserving lines, 100% free and private.',
+  },
 ];
 
 

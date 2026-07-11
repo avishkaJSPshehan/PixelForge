@@ -5,6 +5,7 @@ const convertLinks = [
   { href: '/word-to-pdf',   label: 'Word to PDF' },
   { href: '/excel-to-pdf',  label: 'Excel to PDF' },
   { href: '/pdf-to-excel',  label: 'PDF to Excel' },
+  { href: '/pdf-to-word',   label: 'PDF to Word' },
   { href: '/pptx-to-pdf',   label: 'PowerPoint to PDF' },
   { href: '/html-to-pdf',   label: 'HTML to PDF' },
   { href: '/url-to-pdf',    label: 'URL to PDF' },
