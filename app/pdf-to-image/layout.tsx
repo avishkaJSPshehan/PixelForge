@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Convert PDF to JPG PNG Images Online Free – High Resolution | PixelForge',
   description:
-    'Convert PDF pages to high-quality JPG or PNG images online for free. Download every page as a separate image with no quality loss. Works entirely in your browser — no sign-up.',
+    'Convert PDF pages to high-quality JPG or PNG images online for free. Download every page as a separate image with no quality loss. Works entirely in your browser - no sign-up.',
   keywords: [
     'convert PDF to JPG online free high resolution',
     'PDF to image converter free no watermark',

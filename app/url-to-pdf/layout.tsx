@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Convert URL to PDF Online Free – Save Any Webpage as PDF | PixelForge',
   description:
-    'Convert any website URL or webpage to a PDF file online for free. Paste a link and download the full-page PDF instantly — no browser extension or software needed.',
+    'Convert any website URL or webpage to a PDF file online for free. Paste a link and download the full-page PDF instantly - no browser extension or software needed.',
   keywords: [
     'convert URL to PDF online free',
     'save webpage as PDF from link',

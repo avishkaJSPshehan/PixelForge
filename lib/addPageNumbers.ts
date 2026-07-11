@@ -41,7 +41,7 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
 
 /**
  * Stamps page numbers onto the specified pages of a PDF.
- * All processing happens in the browser — no file is uploaded to any server.
+ * All processing happens in the browser - no file is uploaded to any server.
  *
  * @returns Uint8Array of the modified PDF bytes
  */

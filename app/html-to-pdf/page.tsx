@@ -39,7 +39,7 @@ function preparePrintHtml(rawHtml: string): string {
   if (/<html[\s>]/i.test(rawHtml)) {
     return rawHtml.replace(/(<html[^>]*>)/i, `$1\n<head>${printStyles}</head>`);
   }
-  // Plain fragment (no <html>) — wrap it
+  // Plain fragment (no <html>) - wrap it
   return `<!DOCTYPE html><html><head>${printStyles}</head><body>${rawHtml}</body></html>`;
 }
 
@@ -107,7 +107,7 @@ export default function HtmlToPdfPage() {
       try {
         iframe.contentWindow?.focus();
         iframe.contentWindow?.print();
-        showToast('✓ Print dialog opened — choose "Save as PDF" to download.');
+        showToast('✓ Print dialog opened - choose "Save as PDF" to download.');
       } catch {
         showToast('⚠️ Could not open print dialog. Try using your browser\'s Print menu.', 'error');
       }
@@ -160,7 +160,7 @@ export default function HtmlToPdfPage() {
                 onFiles={handleFiles}
                 icon="🌐"
                 title="Drop an HTML file here"
-                subtitle="Drag & drop an .html or .htm file — or click to browse"
+                subtitle="Drag & drop an .html or .htm file - or click to browse"
                 badge="HTML / HTM supported"
                 disabled={false}
               />
@@ -190,7 +190,7 @@ export default function HtmlToPdfPage() {
               <div className="html2pdf-note animate-in delay-1">
                 <span style={{ fontSize: 16 }}>ℹ️</span>
                 <span>
-                  Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open —
+                  Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open -
                   select <strong>"Save as PDF"</strong> as the destination to download the file.
                 </span>
               </div>
@@ -243,7 +243,7 @@ export default function HtmlToPdfPage() {
                   { n: '1', text: 'Click "Convert to PDF"' },
                   { n: '2', text: 'A print dialog opens' },
                   { n: '3', text: 'Set destination to "Save as PDF"' },
-                  { n: '4', text: 'Click Save — done!' },
+                  { n: '4', text: 'Click Save - done!' },
                 ].map((s) => (
                   <div key={s.n} className="html2pdf-step">
                     <div className="html2pdf-step-num">{s.n}</div>
@@ -258,7 +258,7 @@ export default function HtmlToPdfPage() {
         </div>
       </main>
 
-      {/* Hidden print iframe — invisible to user */}
+      {/* Hidden print iframe - invisible to user */}
       <iframe
         ref={printIframeRef}
         style={{ position: 'fixed', top: -9999, left: -9999, width: 1, height: 1, opacity: 0, border: 'none' }}

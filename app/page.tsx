@@ -10,7 +10,7 @@ const tools = [
     icon: '🔗',
     iconBg: 'tool-icon-red',
     title: 'Merge PDF',
-    description: 'Combine multiple PDF files into one document online — free, instant, no sign-up required.',
+    description: 'Combine multiple PDF files into one document online - free, instant, no sign-up required.',
   },
   {
     href: '/split-pdf',
@@ -26,7 +26,7 @@ const tools = [
     icon: '📄',
     iconBg: 'tool-icon-blue',
     title: 'PDF to Images',
-    description: 'Convert PDF pages to high-resolution JPG or PNG images online free — no quality loss.',
+    description: 'Convert PDF pages to high-resolution JPG or PNG images online free - no quality loss.',
   },
   {
     href: '/image-to-pdf',
@@ -34,7 +34,7 @@ const tools = [
     icon: '🖼️',
     iconBg: 'tool-icon-green',
     title: 'Image to PDF',
-    description: 'Turn multiple JPG, PNG photos into a single PDF file online — free and no watermark.',
+    description: 'Turn multiple JPG, PNG photos into a single PDF file online - free and no watermark.',
   },
   {
     href: '/html-to-pdf',
@@ -50,7 +50,7 @@ const tools = [
     icon: '🔏',
     iconBg: 'tool-icon-teal',
     title: 'Watermark PDF',
-    description: 'Add custom text watermarks to PDF pages online free — adjust angle, color, and opacity.',
+    description: 'Add custom text watermarks to PDF pages online free - adjust angle, color, and opacity.',
   },
   {
     href: '/word-to-pdf',
@@ -66,7 +66,7 @@ const tools = [
     icon: '📊',
     iconBg: 'tool-icon-orange',
     title: 'PowerPoint to PDF',
-    description: 'Convert PowerPoint PPTX presentations to PDF online free — all slides preserved.',
+    description: 'Convert PowerPoint PPTX presentations to PDF online free - all slides preserved.',
   },
   {
     href: '/url-to-pdf',
@@ -74,7 +74,7 @@ const tools = [
     icon: '🔗',
     iconBg: 'tool-icon-indigo',
     title: 'URL to PDF',
-    description: 'Save any webpage as PDF from a URL online free — no browser extension required.',
+    description: 'Save any webpage as PDF from a URL online free - no browser extension required.',
   },
   {
     href: '/page-numbers',
@@ -82,7 +82,7 @@ const tools = [
     icon: '🔢',
     iconBg: 'tool-icon-teal',
     title: 'Add Page Numbers',
-    description: 'Stamp page numbers at any position on PDF pages free — choose top, bottom, left, right.',
+    description: 'Stamp page numbers at any position on PDF pages free - choose top, bottom, left, right.',
   },
   {
     href: '/excel-to-pdf',
@@ -90,7 +90,7 @@ const tools = [
     icon: '📊',
     iconBg: 'tool-icon-green',
     title: 'Excel to PDF',
-    description: 'Convert Excel spreadsheets (.xlsx, .xls) to PDF online free — all sheets included, no sign-up.',
+    description: 'Convert Excel spreadsheets (.xlsx, .xls) to PDF online free - all sheets included, no sign-up.',
   },
   {
     href: '/pdf-to-excel',
@@ -98,7 +98,7 @@ const tools = [
     icon: '📋',
     iconBg: 'tool-icon-green',
     title: 'PDF to Excel',
-    description: 'Extract text and tables from PDF into a structured Excel spreadsheet (.xlsx) — free, browser-based.',
+    description: 'Extract text and tables from PDF into a structured Excel spreadsheet (.xlsx) - free, browser-based.',
   },
 ];
 
@@ -110,7 +110,7 @@ const features = [
   {
     icon: '🛡️',
     title: '100% Private & Secure',
-    body: 'All PDF processing happens entirely inside your browser. Your files are never uploaded to any server — not even ours. Your documents stay on your device.',
+    body: 'All PDF processing happens entirely inside your browser. Your files are never uploaded to any server - not even ours. Your documents stay on your device.',
   },
   {
     icon: '⚡',
@@ -120,7 +120,7 @@ const features = [
   {
     icon: '🌍',
     title: 'Works on Any Device',
-    body: 'PixelForge runs in any modern browser on Windows, Mac, Linux, and mobile. No software installation required — just open and use.',
+    body: 'PixelForge runs in any modern browser on Windows, Mac, Linux, and mobile. No software installation required - just open and use.',
   },
 ];
 
@@ -148,7 +148,7 @@ export default function HomePage() {
               Every tool you need to work with PDFs in one place
             </h1>
             <p className="hp-hero-sub">
-              Merge, split, compress, convert, watermark, and number PDF pages — all free,
+              Merge, split, compress, convert, watermark, and number PDF pages - all free,
               all private, all in your browser. Your files never leave your device.
             </p>
           </div>
@@ -181,7 +181,7 @@ export default function HomePage() {
           <div className="container">
             <div className="hp-section-label">Why PixelForge?</div>
             <h2 className="hp-section-title">
-              Work your way — free, private, and powerful
+              Work your way - free, private, and powerful
             </h2>
             <p className="hp-section-sub">
               The best free online PDF tools for everyone who works with documents every day.
@@ -210,27 +210,26 @@ export default function HomePage() {
                 </h2>
                 <p className="hp-seo-body">
                   Whether you need to <strong>merge multiple PDF files into one</strong>,{' '}
-                  <strong>split a PDF by page range</strong>,{' '}
-                  <strong>convert a Word document to PDF without losing formatting</strong>, or{' '}
-                  <strong>convert PDF pages to high-resolution images</strong> — PixelForge has you covered.
+                  use a <strong>PDF converter Word to PDF</strong> to keep your formatting intact, or{' '}
+                  need a reliable <strong>PDF converter to PDF</strong> tool for your daily workflow - PixelForge has you covered.
                 </p>
                 <p className="hp-seo-body">
-                  Unlike desktop software, PixelForge runs entirely in your browser. There is{' '}
+                  Looking for a <strong>PDF converter online free</strong>? You&apos;ve found it. 
+                  Unlike desktop software, PixelForge runs entirely in your browser as a 100% <strong>pdf converter online free</strong> of charge. There is{' '}
                   <strong>no software installation required</strong>, no Adobe Acrobat subscription,
-                  and no sign-up. Start using the best free online PDF converter today.
+                  and no sign-up.
                 </p>
                 <div className="hp-seo-tags">
                   {[
+                    'PDF converter online free',
+                    'PDF converter Word to PDF',
+                    'PDF converter to PDF',
+                    'pdf converter online free',
                     'Free PDF Merger',
                     'PDF to JPG Converter',
-                    'Word to PDF Free',
                     'Split PDF Online',
                     'PPTX to PDF',
-                    'Add Page Numbers to PDF',
-                    'Watermark PDF',
                     'HTML to PDF',
-                    'URL to PDF',
-                    'Image to PDF',
                   ].map((tag) => (
                     <span key={tag} className="hp-seo-tag">{tag}</span>
                   ))}
@@ -256,7 +255,7 @@ export default function HomePage() {
             <div className="hp-cta-inner">
               <h2 className="hp-cta-title">Start working with your PDFs right now</h2>
               <p className="hp-cta-sub">
-                Pick any free tool above — no sign-up, no installation, no catch.
+                Pick any free tool above - no sign-up, no installation, no catch.
               </p>
               <Link href="#tools" className="btn btn-primary hp-cta-btn">
                 🚀 Explore All Free Tools

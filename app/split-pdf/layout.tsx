@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Split PDF Online Free – Extract Pages from PDF Without Software | PixelForge',
   description:
-    'Split a PDF into individual pages or extract specific page ranges online for free. No watermarks, no email required — instant results processed entirely in your browser.',
+    'Split a PDF into individual pages or extract specific page ranges online for free. No watermarks, no email required - instant results processed entirely in your browser.',
   keywords: [
     'split PDF online free',
     'extract pages from PDF without software',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Split PDF Online Free – Extract Pages Instantly | PixelForge',
     description:
-      'Split or extract pages from any PDF instantly for free. Works entirely in your browser — no uploads, no sign-up.',
+      'Split or extract pages from any PDF instantly for free. Works entirely in your browser - no uploads, no sign-up.',
     url: 'https://www.pixel-forge.online/split-pdf',
     siteName: 'PixelForge',
     type: 'website',

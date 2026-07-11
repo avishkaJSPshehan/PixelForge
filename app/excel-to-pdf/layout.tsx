@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Convert Excel to PDF Online Free – XLSX to PDF Instantly | PixelForge',
   description:
-    'Convert Excel spreadsheets (.xlsx, .xls) to PDF online for free. All sheets are included, no sign-up, no watermarks, fully browser-based — your files never leave your device.',
+    'Convert Excel spreadsheets (.xlsx, .xls) to PDF online for free. All sheets are included, no sign-up, no watermarks, fully browser-based - your files never leave your device.',
   keywords: [
     'convert Excel to PDF online free',
     'XLSX to PDF converter free no sign up',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Excel to PDF Converter Free Online – XLSX to PDF | PixelForge',
     description:
-      'Convert Excel files to PDF instantly — free, no sign-up, no watermarks. All sheets included.',
+      'Convert Excel files to PDF instantly - free, no sign-up, no watermarks. All sheets included.',
     url: 'https://www.pixel-forge.online/excel-to-pdf',
     siteName: 'PixelForge',
     type: 'website',

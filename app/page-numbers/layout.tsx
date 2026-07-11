@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Add Page Numbers to PDF Online Free – Stamp Pages Instantly | PixelForge',
   description:
-    'Add page numbers to any PDF document online for free. Choose position (top, bottom, left, right), start number, font size, and color. Fully browser-based — no sign-up required.',
+    'Add page numbers to any PDF document online for free. Choose position (top, bottom, left, right), start number, font size, and color. Fully browser-based - no sign-up required.',
   keywords: [
     'add page numbers to PDF online free',
     'stamp page numbers on PDF free',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Add Page Numbers to PDF Free Online | PixelForge',
     description:
-      'Stamp custom page numbers at any position on your PDF pages — free, instant, no Adobe Acrobat.',
+      'Stamp custom page numbers at any position on your PDF pages - free, instant, no Adobe Acrobat.',
     url: 'https://www.pixel-forge.online/page-numbers',
     siteName: 'PixelForge',
     type: 'website',

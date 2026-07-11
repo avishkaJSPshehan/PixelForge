@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Merge PDF Files Online Free – Combine PDFs Instantly | PixelForge',
     description:
-      'Combine multiple PDF files into one instantly — free, fast, and 100% private. All processing happens in your browser.',
+      'Combine multiple PDF files into one instantly - free, fast, and 100% private. All processing happens in your browser.',
     url: 'https://www.pixel-forge.online/merge-pdf',
     siteName: 'PixelForge',
     type: 'website',

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import { imagesToPdf } from '@/lib/imagesToPdf';
-// Native download helper — more reliable than file-saver for named files
+// Native download helper - more reliable than file-saver for named files
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -110,7 +110,7 @@ export default function ImageToPdfPage() {
         }
       );
 
-      // Basic sanity check — a valid PDF starts with "%PDF"
+      // Basic sanity check - a valid PDF starts with "%PDF"
       const header = String.fromCharCode(pdfBytes[0], pdfBytes[1], pdfBytes[2], pdfBytes[3]);
       if (header !== '%PDF') {
         throw new Error(`Generated file is not a valid PDF (got header: ${header})`);
@@ -167,7 +167,7 @@ export default function ImageToPdfPage() {
               onFiles={addFiles}
               icon="🖼️"
               title="Drop images here"
-              subtitle="Drag & drop JPG, PNG, or WebP files — or click to browse"
+              subtitle="Drag & drop JPG, PNG, or WebP files - or click to browse"
               badge="Multiple images supported"
               disabled={state === 'converting'}
             />

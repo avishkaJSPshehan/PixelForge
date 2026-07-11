@@ -5,13 +5,13 @@
  * into rows & columns using Y/X coordinate heuristics, then builds an Excel
  * workbook (one sheet per PDF page) via SheetJS and returns it as a Blob.
  *
- * All processing is done entirely in the browser — files never leave the device.
+ * All processing is done entirely in the browser - files never leave the device.
  */
 
 export interface PageSheet {
   /** PDF page number (1-indexed) */
   page: number;
-  /** 2-D array of strings — rows × columns */
+  /** 2-D array of strings - rows × columns */
   rows: string[][];
 }
 
@@ -54,7 +54,7 @@ function groupIntoRows(
 }
 
 /**
- * Main export — converts a PDF File into an Excel Blob.
+ * Main export - converts a PDF File into an Excel Blob.
  * Calls `onProgress(currentPage, totalPages)` as each page is processed.
  */
 export async function pdfToExcel(
@@ -100,7 +100,7 @@ export async function pdfToExcel(
 
   sheets.forEach(({ page, rows }) => {
     if (rows.length === 0) {
-      // Empty page — add a placeholder row
+      // Empty page - add a placeholder row
       const ws = XLSX.utils.aoa_to_sheet([['(no text found on this page)']]);
       XLSX.utils.book_append_sheet(wb, ws, `Page ${page}`);
       return;

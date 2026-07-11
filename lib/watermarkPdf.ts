@@ -30,7 +30,7 @@ export async function watermarkPdf(
   let font;
   if (hasSinhala) {
     pdfDoc.registerFontkit(fontkit);
-    // NotoSansSinhala.ttf is served from /public/fonts — same origin, no CORS.
+    // NotoSansSinhala.ttf is served from /public/fonts - same origin, no CORS.
     // It contains both Sinhala and Latin glyphs in a single file.
     const fontResponse = await fetch('/fonts/NotoSansSinhala.ttf');
     if (!fontResponse.ok) {
@@ -45,7 +45,7 @@ export async function watermarkPdf(
   // Convert hex → rgb (0–1 range)
   const { r, g, b } = hexToRgb(hexColor);
 
-  // Pre-compute angle in radians once — used for the centering offset below.
+  // Pre-compute angle in radians once - used for the centering offset below.
   const angleRad = (angle * Math.PI) / 180;
 
   for (const page of pdfDoc.getPages()) {

@@ -126,7 +126,7 @@ export default function PptxToPdfPage() {
       try {
         iframe.contentWindow?.focus();
         iframe.contentWindow?.print();
-        showToast('✓ Print dialog opened — choose "Save as PDF" to download.');
+        showToast('✓ Print dialog opened - choose "Save as PDF" to download.');
       } catch {
         showToast('⚠️ Could not open print dialog. Try using your browser\'s Print menu.', 'error');
       }
@@ -178,7 +178,7 @@ export default function PptxToPdfPage() {
                 onFiles={handleFiles}
                 icon="📊"
                 title="Drop a PowerPoint file here"
-                subtitle="Drag & drop a .pptx file — or click to browse"
+                subtitle="Drag & drop a .pptx file - or click to browse"
                 badge="PPTX supported"
                 disabled={state === 'loading'}
               />
@@ -240,7 +240,7 @@ export default function PptxToPdfPage() {
                 <div className="html2pdf-note">
                   <span style={{ fontSize: 16 }}>ℹ️</span>
                   <span>
-                    Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open —
+                    Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open -
                     select <strong>"Save as PDF"</strong> and ensure the layout is set to <strong>Landscape</strong>.
                   </span>
                 </div>
@@ -272,7 +272,7 @@ export default function PptxToPdfPage() {
                     { n: '1', text: 'Click "Convert to PDF"' },
                     { n: '2', text: 'A print dialog opens' },
                     { n: '3', text: 'Set destination to "Save as PDF" (Landscape)' },
-                    { n: '4', text: 'Click Save — done!' },
+                    { n: '4', text: 'Click Save - done!' },
                   ].map((s) => (
                     <div key={s.n} className="html2pdf-step">
                       <div className="html2pdf-step-num">{s.n}</div>

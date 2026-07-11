@@ -286,7 +286,7 @@ export default function PageNumbersPage() {
               🔢
             </div>
             <h1>Add Page Numbers</h1>
-            <p>Upload a PDF and stamp page numbers at any position — instantly in your browser, no uploads.</p>
+            <p>Upload a PDF and stamp page numbers at any position - instantly in your browser, no uploads.</p>
           </div>
 
           {/* ── Drop Zone ── */}

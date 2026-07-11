@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Add Watermark to PDF Online Free – Text Watermark PDF | PixelForge',
   description:
-    'Add a custom text watermark to your PDF documents online for free. Choose position, opacity, angle, and color. No sign-up, no file uploads to servers — fully browser-based.',
+    'Add a custom text watermark to your PDF documents online for free. Choose position, opacity, angle, and color. No sign-up, no file uploads to servers - fully browser-based.',
   keywords: [
     'add watermark to PDF online free',
     'text watermark PDF free no sign up',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Add Watermark to PDF Free Online | PixelForge',
     description:
-      'Stamp custom text watermarks on PDF pages — free, instant, and 100% private. No Adobe Acrobat needed.',
+      'Stamp custom text watermarks on PDF pages - free, instant, and 100% private. No Adobe Acrobat needed.',
     url: 'https://www.pixel-forge.online/watermark-pdf',
     siteName: 'PixelForge',
     type: 'website',

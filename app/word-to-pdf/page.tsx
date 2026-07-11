@@ -118,7 +118,7 @@ export default function WordToPdfPage() {
       try {
         iframe.contentWindow?.focus();
         iframe.contentWindow?.print();
-        showToast('✓ Print dialog opened — choose "Save as PDF" to download.');
+        showToast('✓ Print dialog opened - choose "Save as PDF" to download.');
       } catch {
         showToast('⚠️ Could not open print dialog. Try using your browser\'s Print menu.', 'error');
       }
@@ -170,7 +170,7 @@ export default function WordToPdfPage() {
                 onFiles={handleFiles}
                 icon="📝"
                 title="Drop a Word file here"
-                subtitle="Drag & drop a .docx file — or click to browse"
+                subtitle="Drag & drop a .docx file - or click to browse"
                 badge="DOCX supported"
                 disabled={state === 'loading'}
               />
@@ -231,7 +231,7 @@ export default function WordToPdfPage() {
                 <div className="html2pdf-note">
                   <span style={{ fontSize: 16 }}>ℹ️</span>
                   <span>
-                    Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open —
+                    Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open -
                     select <strong>"Save as PDF"</strong> to download the file. Note: Complex layouts may be simplified.
                   </span>
                 </div>
@@ -263,7 +263,7 @@ export default function WordToPdfPage() {
                     { n: '1', text: 'Click "Convert to PDF"' },
                     { n: '2', text: 'A print dialog opens' },
                     { n: '3', text: 'Set destination to "Save as PDF"' },
-                    { n: '4', text: 'Click Save — done!' },
+                    { n: '4', text: 'Click Save - done!' },
                   ].map((s) => (
                     <div key={s.n} className="html2pdf-step">
                       <div className="html2pdf-step-num">{s.n}</div>

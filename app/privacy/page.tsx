@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy – PixelForge | How We Protect Your Data',
   description:
-    'Read the PixelForge Privacy Policy. We process all PDF files entirely in your browser — no file uploads, no data collection, no cookies for tracking.',
+    'Read the PixelForge Privacy Policy. We process all PDF files entirely in your browser - no file uploads, no data collection, no cookies for tracking.',
   alternates: { canonical: 'https://www.pixel-forge.online/privacy' },
 };
 

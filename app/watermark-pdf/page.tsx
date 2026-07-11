@@ -280,7 +280,7 @@ export default function WatermarkPdfPage() {
             <h1>Watermark PDF</h1>
             <p>
               Upload a PDF, customise your watermark, preview on every page,
-              and download — all in your browser.
+              and download - all in your browser.
             </p>
           </div>
 
