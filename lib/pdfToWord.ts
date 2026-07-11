@@ -1,10 +1,4 @@
-import * as pdfjsLib from 'pdfjs-dist';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
-
-if (typeof window !== 'undefined' && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
-  // Use the same worker configured for the Excel converter
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-}
 
 /**
  * Extracts text from a PDF and constructs a DOCX Blob.
@@ -13,6 +7,9 @@ export async function convertPdfToWord(
   file: File,
   onProgress?: (progress: number) => void
 ): Promise<Blob> {
+  const pdfjsLib = await import('pdfjs-dist');
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+
   const arrayBuffer = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
   const numPages = pdf.numPages;
