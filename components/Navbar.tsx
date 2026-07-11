@@ -19,6 +19,7 @@ const convertToPdf = [
 const convertFromPdf = [
   { href: '/pdf-to-image', label: 'PDF to Images', emoji: '📄' },
   { href: '/pdf-to-excel', label: 'PDF to Excel',  emoji: '📊' },
+  { href: '/pdf-to-word',  label: 'PDF to Word',   emoji: '📝' },
 ];
 
 const allTools = [
@@ -28,6 +29,7 @@ const allTools = [
   { href: '/page-numbers',  icon: '🔢', label: 'Add Page Numbers' },
   { href: '/pdf-to-image',  icon: '📄', label: 'PDF to Images' },
   { href: '/pdf-to-excel',  icon: '📊', label: 'PDF to Excel' },
+  { href: '/pdf-to-word',   icon: '📝', label: 'PDF to Word' },
   { href: '/image-to-pdf',  icon: '🖼️', label: 'Image to PDF' },
   { href: '/html-to-pdf',   icon: '🌐', label: 'HTML to PDF' },
   { href: '/url-to-pdf',    icon: '🔗', label: 'URL to PDF' },
