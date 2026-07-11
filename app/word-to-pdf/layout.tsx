@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Convert Word to PDF Online Free – DOCX to PDF Instantly | PixelForge',
   description:
-    'Convert Word DOCX documents to PDF online for free without losing formatting. Drag and drop your Word file and download a perfect PDF instantly — no Office installation needed.',
+    'Convert Word DOCX documents to PDF online for free without losing formatting. Drag and drop your Word file and download a perfect PDF instantly - no Office installation needed.',
   keywords: [
     'convert Word to PDF online free',
     'DOCX to PDF converter free no sign up',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Word to PDF Converter Free Online – DOCX to PDF | PixelForge',
     description:
-      'Convert DOCX files to PDF in seconds — free, no sign-up, no watermarks, no formatting loss.',
+      'Convert DOCX files to PDF in seconds - free, no sign-up, no watermarks, no formatting loss.',
     url: 'https://www.pixel-forge.online/word-to-pdf',
     siteName: 'PixelForge',
     type: 'website',

@@ -61,7 +61,7 @@ export default function PdfToExcelPage() {
       setSheetCount(sheets.length);
       setResultBlob(blob);
       setState('done');
-      showToast(`✓ ${sheets.length} page${sheets.length !== 1 ? 's' : ''} extracted — ready to download!`);
+      showToast(`✓ ${sheets.length} page${sheets.length !== 1 ? 's' : ''} extracted - ready to download!`);
     } catch (err) {
       console.error(err);
       setError('Failed to convert PDF. Make sure the file is a valid, non-password-protected PDF.');
@@ -115,7 +115,7 @@ export default function PdfToExcelPage() {
             </div>
             <h1>PDF to Excel</h1>
             <p>
-              Upload a PDF and extract all text into a structured Excel spreadsheet (.xlsx) —
+              Upload a PDF and extract all text into a structured Excel spreadsheet (.xlsx) -
               free, browser-based, no sign-up, your files never leave your device.
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function PdfToExcelPage() {
                   <span className="p2e-info-icon">⚡</span>
                   <div>
                     <div className="p2e-info-title">Instant Download</div>
-                    <div className="p2e-info-body">Get your .xlsx file immediately — no waiting for server processing.</div>
+                    <div className="p2e-info-body">Get your .xlsx file immediately - no waiting for server processing.</div>
                   </div>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export default function PdfToExcelPage() {
                       { n: '1', text: 'PDF text layer read in browser' },
                       { n: '2', text: 'Text grouped into rows & columns' },
                       { n: '3', text: 'Excel workbook built (1 sheet per page)' },
-                      { n: '4', text: 'Click Download — open in Excel or Sheets' },
+                      { n: '4', text: 'Click Download - open in Excel or Sheets' },
                     ].map((s) => (
                       <div key={s.n} className="html2pdf-step">
                         <div className="html2pdf-step-num">{s.n}</div>

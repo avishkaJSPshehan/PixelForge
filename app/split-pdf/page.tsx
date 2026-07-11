@@ -178,7 +178,7 @@ export default function SplitPdfPage() {
             <p>Upload a PDF, choose a page range, and download just those pages.</p>
           </div>
 
-          {/* DropZone — hide once file is loaded */}
+          {/* DropZone - hide once file is loaded */}
           {!file && (
             <div className="animate-in delay-1">
               <DropZone
@@ -232,7 +232,7 @@ export default function SplitPdfPage() {
                       </div>
                     </div>
 
-                    {/* Last page preview — only shown when range has 2+ pages */}
+                    {/* Last page preview - only shown when range has 2+ pages */}
                     <div className={`split-preview-box${clamp(fromPage) === clamp(toPage) ? ' split-preview-box-hidden' : ''}`}>
                       <div className="split-preview-label">Last page (page {clamp(toPage)})</div>
                       <div className="split-preview-thumb">

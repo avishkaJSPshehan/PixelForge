@@ -93,7 +93,7 @@ export default function UrlToPdfPage() {
         const iframeTitle = iframe.contentDocument?.title;
         if (iframeTitle) setPageTitle(iframeTitle);
       } catch {
-        // cross-origin restriction — ignore
+        // cross-origin restriction - ignore
       }
     }, 300);
   }, [fetchedHtml]);
@@ -153,7 +153,7 @@ export default function UrlToPdfPage() {
       try {
         iframe.contentWindow?.focus();
         iframe.contentWindow?.print();
-        showToast('✓ Print dialog opened — choose "Save as PDF" to download.');
+        showToast('✓ Print dialog opened - choose "Save as PDF" to download.');
       } catch {
         showToast('⚠️ Could not open print dialog. Try your browser\'s Print menu.', 'error');
       }
@@ -198,7 +198,7 @@ export default function UrlToPdfPage() {
               🔗
             </div>
             <h1>URL to PDF</h1>
-            <p>Paste any webpage URL and download it as a PDF — instantly, right in your browser.</p>
+            <p>Paste any webpage URL and download it as a PDF - instantly, right in your browser.</p>
           </div>
 
           {/* URL Input card */}
@@ -275,7 +275,7 @@ export default function UrlToPdfPage() {
               <div className="url2pdf-note animate-in delay-1">
                 <span style={{ fontSize: 16 }}>ℹ️</span>
                 <span>
-                  Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open —
+                  Click <strong>Convert to PDF</strong> below. Your browser's print dialog will open -
                   select <strong>"Save as PDF"</strong> as the destination.
                 </span>
               </div>
@@ -328,7 +328,7 @@ export default function UrlToPdfPage() {
                   { n: '1', text: 'Click "Convert to PDF"' },
                   { n: '2', text: 'A print dialog opens' },
                   { n: '3', text: 'Set destination to "Save as PDF"' },
-                  { n: '4', text: 'Click Save — done!' },
+                  { n: '4', text: 'Click Save - done!' },
                 ].map((s) => (
                   <div key={s.n} className="url2pdf-step">
                     <div className="url2pdf-step-num">{s.n}</div>

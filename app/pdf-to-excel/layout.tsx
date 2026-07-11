@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Convert PDF to Excel Online Free – PDF to XLSX | PixelForge',
   description:
-    'Convert PDF files to Excel spreadsheets (.xlsx) online for free. Extract tables and text from PDFs into structured rows and columns — no sign-up, no watermarks, 100% browser-based.',
+    'Convert PDF files to Excel spreadsheets (.xlsx) online for free. Extract tables and text from PDFs into structured rows and columns - no sign-up, no watermarks, 100% browser-based.',
   keywords: [
     'convert PDF to Excel online free',
     'PDF to XLSX converter free no sign up',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PDF to Excel Converter Free Online – PDF to XLSX | PixelForge',
     description:
-      'Extract text and tables from PDFs into Excel spreadsheets — free, no sign-up, no watermarks. All processing in your browser.',
+      'Extract text and tables from PDFs into Excel spreadsheets - free, no sign-up, no watermarks. All processing in your browser.',
     url: 'https://www.pixel-forge.online/pdf-to-excel',
     siteName: 'PixelForge',
     type: 'website',

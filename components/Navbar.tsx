@@ -62,7 +62,7 @@ function CloseIcon() {
   );
 }
 
-/** Plain emoji icon — same fixed width as the simple dropdown's icon span */
+/** Plain emoji icon - same fixed width as the simple dropdown's icon span */
 function FileIcon({ emoji }: { emoji: string }) {
   return <span className="nb-file-icon" aria-hidden="true">{emoji}</span>;
 }

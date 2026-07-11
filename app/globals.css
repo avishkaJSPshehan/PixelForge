@@ -90,7 +90,7 @@ input, textarea { font-family: inherit; }
   min-height: 100vh;
 }
 
-/* Remove extra top padding on the home page — hero has its own spacing */
+/* Remove extra top padding on the home page - hero has its own spacing */
 .hp-main { padding-top: 0; }
 
 /* ═══════════════════════════════════════
@@ -526,7 +526,7 @@ input, textarea { font-family: inherit; }
   z-index: 300;
 }
 
-/* Small arrow pointer — positioned above the button text (right side of panel) */
+/* Small arrow pointer - positioned above the button text (right side of panel) */
 .nb-dropdown-panel::before {
   content: '';
   position: absolute;
@@ -655,7 +655,7 @@ input, textarea { font-family: inherit; }
   min-width: 460px;
 }
 
-/* Caret pointer — sits above the button centre (~55px from left edge of panel) */
+/* Caret pointer - sits above the button centre (~55px from left edge of panel) */
 .nb-mega-panel::before {
   content: '';
   position: absolute;
@@ -1892,7 +1892,7 @@ input, textarea { font-family: inherit; }
   box-shadow: 0 0 0 3px rgba(215, 38, 38, 0.12);
 }
 
-/* Stepper wrapper — surrounds the input with − / + buttons */
+/* Stepper wrapper - surrounds the input with − / + buttons */
 .split-stepper {
   display: flex;
   align-items: center;

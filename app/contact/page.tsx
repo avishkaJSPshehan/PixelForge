@@ -15,7 +15,7 @@ export default function ContactPage() {
       setError('Please fill in all required fields.');
       return;
     }
-    // mailto fallback — opens the default mail client
+    // mailto fallback - opens the default mail client
     const mailtoLink = `mailto:support@pixel-forge.online?subject=${encodeURIComponent(form.subject || 'PixelForge Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
     window.location.href = mailtoLink;
     setSent(true);

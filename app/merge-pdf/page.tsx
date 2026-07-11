@@ -193,7 +193,7 @@ export default function MergePdfPage() {
               onFiles={addFiles}
               icon="📑"
               title="Drop PDF files here"
-              subtitle="Drag & drop two or more PDF files — or click to browse"
+              subtitle="Drag & drop two or more PDF files - or click to browse"
               badge="Multiple PDFs supported"
               disabled={state === 'merging'}
             />

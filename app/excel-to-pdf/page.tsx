@@ -200,7 +200,7 @@ export default function ExcelToPdfPage() {
       try {
         iframe.contentWindow?.focus();
         iframe.contentWindow?.print();
-        showToast('✓ Print dialog opened — choose "Save as PDF" to download.');
+        showToast('✓ Print dialog opened - choose "Save as PDF" to download.');
       } catch {
         showToast('⚠️ Could not open print dialog.', 'error');
       }
@@ -245,7 +245,7 @@ export default function ExcelToPdfPage() {
             </div>
             <h1>Excel to PDF</h1>
             <p>
-              Upload an Excel spreadsheet (.xlsx, .xls) and convert it to a PDF instantly —
+              Upload an Excel spreadsheet (.xlsx, .xls) and convert it to a PDF instantly -
               free, browser-based, no sign-up required.
             </p>
           </div>
@@ -259,7 +259,7 @@ export default function ExcelToPdfPage() {
                 onFiles={handleFiles}
                 icon="📊"
                 title="Drop your Excel file here"
-                subtitle="Supports .xlsx, .xls, .xlsm — all sheets converted to one PDF"
+                subtitle="Supports .xlsx, .xls, .xlsm - all sheets converted to one PDF"
                 badge="Excel supported"
                 disabled={isLoading}
               />
@@ -316,7 +316,7 @@ export default function ExcelToPdfPage() {
                         Spreadsheet Preview
                         {sheetsHtml.length > 1 && (
                           <span style={{ color: 'var(--text-muted)', fontWeight: 400, marginLeft: 8 }}>
-                            — {sheetsHtml[activeSheet]?.name}
+                            - {sheetsHtml[activeSheet]?.name}
                           </span>
                         )}
                       </span>
@@ -362,7 +362,7 @@ export default function ExcelToPdfPage() {
                     <span style={{ fontSize: 16 }}>ℹ️</span>
                     <span>
                       Click <strong>Convert to PDF</strong> below. Your browser&apos;s print dialog
-                      will open — select <strong>&quot;Save as PDF&quot;</strong> as the destination.
+                      will open - select <strong>&quot;Save as PDF&quot;</strong> as the destination.
                       {sheetsHtml.length > 1 && (
                         <> All <strong>{sheetsHtml.length} sheets</strong> will be included.</>
                       )}
@@ -398,7 +398,7 @@ export default function ExcelToPdfPage() {
                       { n: '1', text: 'Click "Convert to PDF"' },
                       { n: '2', text: 'Browser print dialog opens' },
                       { n: '3', text: 'Set destination to "Save as PDF"' },
-                      { n: '4', text: 'Click Save — done!' },
+                      { n: '4', text: 'Click Save - done!' },
                     ].map((s) => (
                       <div key={s.n} className="html2pdf-step">
                         <div className="html2pdf-step-num">{s.n}</div>

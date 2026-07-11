@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Convert Images to PDF Online Free – JPG PNG to PDF | PixelForge',
   description:
-    'Convert multiple JPG, PNG, or other images into a single PDF file online for free. Reorder pages, adjust layout, and download instantly — no installation, no sign-up required.',
+    'Convert multiple JPG, PNG, or other images into a single PDF file online for free. Reorder pages, adjust layout, and download instantly - no installation, no sign-up required.',
   keywords: [
     'convert images to PDF online free',
     'turn multiple JPG into one PDF',

@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import ImageCard from '@/components/ImageCard';
 import { pdfToImages, ConversionResult } from '@/lib/pdfToImages';
-// Native download helper — more reliable than file-saver for named files
+// Native download helper - more reliable than file-saver for named files
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
