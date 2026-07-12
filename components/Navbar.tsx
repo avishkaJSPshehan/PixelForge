@@ -6,6 +6,13 @@ import { useState, useRef, useEffect } from 'react';
 
 /* ─── Tool data ─────────────────────────────────────────────────────────── */
 
+/** Items shown under "ORGANIZE PDF" column */
+const organizePdf = [
+  { href: '/merge-pdf',    label: 'Merge PDF',       emoji: '🔗' },
+  { href: '/split-pdf',    label: 'Split PDF',       emoji: '✂️' },
+  { href: '/remove-pages', label: 'Remove Pages',    emoji: '🗑️' },
+];
+
 /** Items shown under "CONVERT TO PDF" column */
 const convertToPdf = [
   { href: '/image-to-pdf', label: 'Image to PDF',       emoji: '🖼️' },
@@ -25,6 +32,7 @@ const convertFromPdf = [
 const allTools = [
   { href: '/merge-pdf',     icon: '🔗', label: 'Merge PDF' },
   { href: '/split-pdf',     icon: '✂️', label: 'Split PDF' },
+  { href: '/remove-pages',  icon: '🗑️', label: 'Remove Pages' },
   { href: '/watermark-pdf', icon: '🔏', label: 'Watermark PDF' },
   { href: '/page-numbers',  icon: '🔢', label: 'Add Page Numbers' },
   { href: '/pdf-to-image',  icon: '📄', label: 'PDF to Images' },

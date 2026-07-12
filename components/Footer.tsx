@@ -12,6 +12,7 @@ const convertLinks = [
   { href: '/pdf-to-image',  label: 'PDF to JPG' },
   { href: '/merge-pdf',     label: 'Merge PDF' },
   { href: '/split-pdf',     label: 'Split PDF' },
+  { href: '/remove-pages',  label: 'Remove Pages' },
   { href: '/watermark-pdf', label: 'Watermark PDF' },
   { href: '/page-numbers',  label: 'Add Page Numbers' },
 ];

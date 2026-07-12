@@ -21,6 +21,14 @@ const tools = [
     description: 'Extract pages or split PDF by range online free. Download as separate files instantly.',
   },
   {
+    href: '/remove-pages',
+    id: 'home-card-remove-pages',
+    icon: '🗑️',
+    iconBg: 'tool-icon-red',
+    title: 'Remove Pages',
+    description: 'Delete unwanted pages from your PDF online. Visual selection, free and 100% private.',
+  },
+  {
     href: '/pdf-to-image',
     id: 'home-card-pdf-to-image',
     icon: '📄',
