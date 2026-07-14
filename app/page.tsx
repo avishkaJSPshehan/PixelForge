@@ -29,6 +29,14 @@ const tools = [
     description: 'Delete unwanted pages from your PDF online. Visual selection, free and 100% private.',
   },
   {
+    href: '/compress-pdf',
+    id: 'home-card-compress-pdf',
+    icon: '🗜️',
+    iconBg: 'tool-icon-purple',
+    title: 'Compress PDF',
+    description: 'Reduce PDF file size online free. Choose compression level and download instantly.',
+  },
+  {
     href: '/pdf-to-image',
     id: 'home-card-pdf-to-image',
     icon: '📄',
