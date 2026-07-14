@@ -124,6 +124,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Compress PDF Tool -->
+  <url>
+    <loc>https://www.pixel-forge.online/compress-pdf</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- About Us -->
   <url>
     <loc>https://www.pixel-forge.online/about</loc>
