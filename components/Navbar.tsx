@@ -12,6 +12,7 @@ const organizePdf = [
   { href: '/split-pdf',    label: 'Split PDF',       emoji: '✂️' },
   { href: '/remove-pages', label: 'Remove Pages',    emoji: '🗑️' },
   { href: '/compress-pdf', label: 'Compress PDF',    emoji: '🗜️' },
+  { href: '/protect-pdf',  label: 'Protect PDF',     emoji: '🔐' },
 ];
 
 /** Items shown under "CONVERT TO PDF" column */
@@ -35,6 +36,7 @@ const allTools = [
   { href: '/split-pdf',     icon: '✂️', label: 'Split PDF' },
   { href: '/remove-pages',  icon: '🗑️', label: 'Remove Pages' },
   { href: '/compress-pdf',  icon: '🗜️', label: 'Compress PDF' },
+  { href: '/protect-pdf',   icon: '🔐', label: 'Protect PDF' },
   { href: '/watermark-pdf', icon: '🔏', label: 'Watermark PDF' },
   { href: '/page-numbers',  icon: '🔢', label: 'Add Page Numbers' },
   { href: '/pdf-to-image',  icon: '📄', label: 'PDF to Images' },

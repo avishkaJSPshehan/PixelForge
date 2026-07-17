@@ -14,6 +14,7 @@
   "dependencies": {
     "@jvmr/pptx-to-html": "^1.0.1",
     "@pdf-lib/fontkit": "^1.1.1",
+    "@pdfsmaller/pdf-decrypt": "^1.0.1",
     "@types/node": "^26.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
@@ -23,6 +24,7 @@
     "mammoth": "^1.12.0",
     "next": "^14.2.35",
     "pdf-lib": "^1.17.1",
+    "pdf-lib-plus-encrypt": "^1.1.0",
     "pdfjs-dist": "^6.1.200",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

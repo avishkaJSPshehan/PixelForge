@@ -37,6 +37,14 @@ const tools = [
     description: 'Reduce PDF file size online free. Choose compression level and download instantly.',
   },
   {
+    href: '/protect-pdf',
+    id: 'home-card-protect-pdf',
+    icon: '🔐',
+    iconBg: 'tool-icon-red',
+    title: 'PDF Password Protect',
+    description: 'Add password protection to your PDF online free. Encrypt and secure your documents instantly.',
+  },
+  {
     href: '/pdf-to-image',
     id: 'home-card-pdf-to-image',
     icon: '📄',
