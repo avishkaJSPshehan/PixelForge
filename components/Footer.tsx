@@ -3,10 +3,11 @@
 import Link from 'next/link';
 
 const organizePdf = [
-  { href: '/merge-pdf',    label: 'Merge PDF',     icon: '🔗', color: '#ff6b6b' },
-  { href: '/split-pdf',   label: 'Split PDF',      icon: '✂️', color: '#f39c12' },
-  { href: '/remove-pages',label: 'Remove pages',   icon: '🗑️', color: '#ff6b6b' },
-  { href: '/compress-pdf',label: 'Compress PDF',   icon: '🗜️', color: '#8b5cf6' },
+  { href: '/merge-pdf',    label: 'Merge PDF',    icon: '🔗', color: '#ff6b6b' },
+  { href: '/split-pdf',   label: 'Split PDF',     icon: '✂️', color: '#f39c12' },
+  { href: '/remove-pages',label: 'Remove pages',  icon: '🗑️', color: '#ff6b6b' },
+  { href: '/compress-pdf',label: 'Compress PDF',  icon: '🗜️', color: '#8b5cf6' },
+  { href: '/protect-pdf', label: 'Protect PDF',   icon: '🔐', color: '#ef4444' },
 ];
 
 const convertToPdf = [

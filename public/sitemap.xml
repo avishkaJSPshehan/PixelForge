@@ -132,6 +132,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Protect PDF Tool -->
+  <url>
+    <loc>https://www.pixel-forge.online/protect-pdf</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- About Us -->
   <url>
     <loc>https://www.pixel-forge.online/about</loc>
