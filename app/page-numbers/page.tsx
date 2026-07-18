@@ -1,4 +1,5 @@
 'use client';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 import { useState, useCallback, useRef } from 'react';
 import Link from 'next/link';
@@ -237,6 +238,7 @@ export default function PageNumbersPage() {
       const blob = new Blob([bytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       const baseName = file.name.replace(/\.pdf$/i, '');
       downloadBlob(blob, `${baseName}_numbered.pdf`);
+      incrementFileCount();
       setProcessState('done');
       showToast('✓ Numbered PDF downloaded!');
     } catch {

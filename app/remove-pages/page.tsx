@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import { pdfToImages, ConversionResult } from '@/lib/pdfToImages';
+import { incrementFileCount } from '@/lib/fileCounter';
 import { removePagesFromPdf } from '@/lib/removePdfPages';
 import { saveAs } from 'file-saver';
 
@@ -84,6 +85,7 @@ export default function RemovePagesPage() {
       const bytes = await removePagesFromPdf(file, removedPages);
       const blob = new Blob([bytes as unknown as BlobPart], { type: 'application/pdf' });
       setResultBlob(blob);
+      incrementFileCount();
       setState('done');
       showToast('✓ Pages removed successfully!');
     } catch (err) {

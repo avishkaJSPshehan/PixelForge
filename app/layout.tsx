@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import Footer from '@/components/Footer';
+import { ThemeProvider } from '@/components/ThemeProvider';
 // @ts-ignore
 import './globals.css';
 
@@ -81,6 +82,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        {/* Anti-flash: apply saved theme before first paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                try {
+                  var t = localStorage.getItem('pf-theme');
+                  if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  document.documentElement.setAttribute('data-theme', t);
+                } catch(e){}
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         {/* Google Analytics */}
@@ -96,10 +111,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-HLBTWMN5DH');
           `}
         </Script>
-        <div className="site-wrapper">
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="site-wrapper">
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

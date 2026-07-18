@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
+import { useTheme } from '@/components/ThemeProvider';
 
 /* ─── Tool data ─────────────────────────────────────────────────────────── */
 
@@ -51,6 +52,30 @@ const allTools = [
 ];
 
 /* ─── SVG Icons ─────────────────────────────────────────────────────────── */
+
+function SunIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  );
+}
 
 function ChevronIcon() {
   return (
@@ -213,6 +238,7 @@ function ConvertDropdown({ isAnyActive }: { isAnyActive: boolean }) {
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggle } = useTheme();
 
   const allConvertHrefs = [...convertToPdf, ...convertFromPdf].map((t) => t.href);
   const convertActive   = allConvertHrefs.includes(pathname);
@@ -256,6 +282,17 @@ export default function Navbar() {
               items={allTools}
               isAnyActive={allActive && !convertActive}
             />
+
+            {/* Theme toggle — desktop */}
+            <button
+              className="theme-toggle"
+              onClick={toggle}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              id="navbar-theme-toggle"
+              title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+            >
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </button>
           </div>
 
           {/* ── Mobile hamburger ── */}
@@ -288,7 +325,34 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="nb-mobile-divider">More Tools</div>
-          <Link href="/watermark-pdf" className="nb-mobile-link nb-mobile-link--sub" onClick={() => setMobileOpen(false)}>🔏 Watermark PDF</Link>
+          <Link href="/watermark-pdf" className="nb-mobile-link nb-mobile-link--sub" onClick={() => setMobileOpen(false)}>Watermark PDF</Link>
+
+          {/* Theme toggle — mobile */}
+          <div className="nb-mobile-divider">Appearance</div>
+          <button
+            className="nb-mobile-link"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              background: 'none',
+              border: 'none',
+              width: '100%',
+              textAlign: 'left',
+              cursor: 'pointer',
+              color: 'var(--text-secondary)',
+              fontWeight: 600,
+              fontSize: 14,
+              padding: '12px 0',
+            }}
+            onClick={() => { toggle(); setMobileOpen(false); }}
+            id="navbar-theme-toggle-mobile"
+          >
+            <span style={{ display: 'inline-flex', width: 20, height: 20 }}>
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </span>
+            {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </button>
         </div>
       )}
     </>

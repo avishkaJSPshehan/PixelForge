@@ -1,4 +1,5 @@
 'use client';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
@@ -60,6 +61,7 @@ export default function PdfToExcelPage() {
 
       setSheetCount(sheets.length);
       setResultBlob(blob);
+      incrementFileCount();
       setState('done');
       showToast(`✓ ${sheets.length} page${sheets.length !== 1 ? 's' : ''} extracted - ready to download!`);
     } catch (err) {

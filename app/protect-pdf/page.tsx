@@ -1,4 +1,5 @@
 'use client';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
@@ -77,6 +78,7 @@ export default function ProtectPdfPage() {
       const { protectPdf } = await import('@/lib/protectPdf');
       const bytes = await protectPdf(file, password);
       setResultBytes(bytes);
+      incrementFileCount();
       setState('done');
     } catch (err) {
       console.error(err);
