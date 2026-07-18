@@ -6,6 +6,7 @@ import { saveAs } from 'file-saver';
 import DropZone from '@/components/DropZone';
 import Navbar from '@/components/Navbar';
 import { convertPdfToWord } from '@/lib/pdfToWord';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 export default function PdfToWordPage() {
   const [state, setState] = useState<'idle' | 'converting' | 'done'>('idle');
@@ -36,6 +37,7 @@ export default function PdfToWordPage() {
         setProgress(p);
       });
       setResultBlob(blob);
+      incrementFileCount();
       setState('done');
     } catch (err) {
       console.error(err);

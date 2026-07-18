@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import ImageCard from '@/components/ImageCard';
 import { pdfToImages, ConversionResult } from '@/lib/pdfToImages';
+import { incrementFileCount } from '@/lib/fileCounter';
 // Native download helper - more reliable than file-saver for named files
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
@@ -54,6 +55,7 @@ export default function PdfToImagePage() {
         setProgressText(`Converting page ${current} of ${total}…`);
       });
       setImages(results);
+      incrementFileCount();
       setState('done');
       showToast(`✓ ${results.length} page${results.length > 1 ? 's' : ''} converted!`);
     } catch (err) {

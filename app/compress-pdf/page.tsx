@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import { type CompressionLevel, COMPRESSION_CONFIGS } from '@/lib/compressPdf';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 type State = 'idle' | 'compressing' | 'done' | 'error';
 
@@ -72,6 +73,7 @@ export default function CompressPdfPage() {
       });
 
       setResultBytes(bytes);
+      incrementFileCount();
       setState('done');
     } catch (err) {
       console.error(err);

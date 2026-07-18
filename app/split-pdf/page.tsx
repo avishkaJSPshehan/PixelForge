@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import { splitPdf } from '@/lib/splitPdf';
+import { incrementFileCount } from '@/lib/fileCounter';
 import type * as pdfjsLib from 'pdfjs-dist';
 
 type State = 'idle' | 'splitting' | 'done' | 'error';
@@ -134,6 +135,7 @@ export default function SplitPdfPage() {
       const blob = new Blob([bytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       const baseName = file.name.replace(/\.pdf$/i, '');
       downloadBlob(blob, `${baseName}_pages_${from}-${to}.pdf`);
+      incrementFileCount();
       setState('done');
       showToast(`✓ Extracted pages ${from}–${to} successfully!`);
     } catch (err) {

@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import ProcessedFilesCount from '@/components/ProcessedFilesCount';
 
 /* ─── Tool data ─────────────────────────────────────────────────────────── */
 
@@ -160,7 +161,6 @@ const features = [
 
 const stats = [
   { value: '10+', label: 'Free PDF Tools' },
-  { value: '0', label: 'Files Uploaded to Server' },
   { value: '100%', label: 'Browser-Based Processing' },
   { value: '∞', label: 'Free Forever' },
 ];
@@ -270,12 +270,15 @@ export default function HomePage() {
 
               {/* Stats */}
               <div className="hp-stats-grid">
+                {/* Static stats */}
                 {stats.map((s) => (
                   <div key={s.label} className="hp-stat-card">
                     <div className="hp-stat-value">{s.value}</div>
                     <div className="hp-stat-label">{s.label}</div>
                   </div>
                 ))}
+                {/* Live processed-files counter */}
+                <ProcessedFilesCount />
               </div>
             </div>
           </div>

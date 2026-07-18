@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import { imagesToPdf } from '@/lib/imagesToPdf';
+import { incrementFileCount } from '@/lib/fileCounter';
 // Native download helper - more reliable than file-saver for named files
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
@@ -119,6 +120,8 @@ export default function ImageToPdfPage() {
       // Use file-saver for reliable cross-browser named download
       const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
       downloadBlob(pdfBlob, 'PixelForge_output.pdf');
+
+      incrementFileCount();
 
       setState('done');
       showToast(`✓ PDF created with ${items.length} page${items.length > 1 ? 's' : ''}!`);

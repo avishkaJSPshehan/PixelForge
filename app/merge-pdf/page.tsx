@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import DropZone from '@/components/DropZone';
 import { mergePdfs } from '@/lib/mergePdfs';
+import { incrementFileCount } from '@/lib/fileCounter';
 import type * as pdfjsLib from 'pdfjs-dist';
 
 function downloadBlob(blob: Blob, filename: string) {
@@ -146,6 +147,8 @@ export default function MergePdfPage() {
 
       const blob = new Blob([pdfBytes.slice()], { type: 'application/pdf' });
       downloadBlob(blob, 'PixelForge_merged.pdf');
+
+      incrementFileCount();
 
       setState('done');
       showToast(`✓ Merged ${items.length} PDFs successfully!`);

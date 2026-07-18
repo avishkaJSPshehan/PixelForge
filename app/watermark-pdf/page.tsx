@@ -1,4 +1,5 @@
 'use client';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 import {
   useState,
@@ -223,6 +224,7 @@ export default function WatermarkPdfPage() {
       });
       const baseName = file.name.replace(/\.pdf$/i, '');
       downloadBlob(blob, `${baseName}_watermarked.pdf`);
+      incrementFileCount();
       setProcessState('done');
       showToast('✓ Watermarked PDF downloaded!');
     } catch (err) {

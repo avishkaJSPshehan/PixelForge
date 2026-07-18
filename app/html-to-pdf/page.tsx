@@ -1,4 +1,5 @@
 'use client';
+import { incrementFileCount } from '@/lib/fileCounter';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -107,6 +108,7 @@ export default function HtmlToPdfPage() {
       try {
         iframe.contentWindow?.focus();
         iframe.contentWindow?.print();
+        incrementFileCount();
         showToast('✓ Print dialog opened - choose "Save as PDF" to download.');
       } catch {
         showToast('⚠️ Could not open print dialog. Try using your browser\'s Print menu.', 'error');
