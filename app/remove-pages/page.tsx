@@ -356,6 +356,110 @@ export default function RemovePagesPage() {
           )}
         </div>
       </main>
+
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Remove Pages from a PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF onto the page. PixelForge renders thumbnail previews of every page so you can clearly see which pages are in the document before making any selection.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Select the pages to remove</div>
+                <div className="tool-step-desc">Click on any page thumbnail to mark it for removal — it will be highlighted with a visual indicator. You can select as many pages as you like. Click a selected page again to deselect it. When you&apos;re happy with your selection, review the count shown before proceeding.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Remove pages and download</div>
+                <div className="tool-step-desc">Click &quot;Remove Selected Pages&quot;. The tool rebuilds the PDF with the selected pages omitted and all remaining pages preserved in their original order and quality. Download the resulting PDF immediately.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Pages are removed in your browser — your PDF never leaves your device.</strong> Cloud-based page removal tools must upload your entire document to their server before deleting any pages. If those pages contain confidential information, you are trusting that server not to store or access it. PixelForge removes pages using pdf-lib running in your browser. Your complete document stays local throughout the entire process.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Can I undo page removal after downloading?</div>
+              <div className="faq-answer">No. Once you download the processed PDF, the removed pages are permanently gone from that file. PixelForge does not store your original document — we strongly recommend keeping a backup copy of your original PDF before removing any pages, in case you need to recover them later.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will removing pages affect the quality of the remaining pages?</div>
+              <div className="faq-answer">No. Removing pages deletes them from the document structure without touching the remaining pages in any way. The text, images, annotations, and formatting on all remaining pages are preserved exactly as they were in the original file.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I remove all pages except specific ones?</div>
+              <div className="faq-answer">Yes — but it may be easier to use the <a href="/split-pdf">Split PDF tool</a> for this purpose. With Split PDF, you specify the page range you want to keep, and the tool extracts just those pages. This is the inverse of removing pages and may be more convenient when you want to keep only a small subset of a large document.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Is there a limit to how many pages I can remove?</div>
+              <div className="faq-answer">You can remove as many pages as you like, right up to all-but-one page. The final PDF must contain at least one page. The only practical constraint is your device&apos;s memory, since all processing happens locally in your browser.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I undo page removal after downloading the PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Once downloaded, removed pages are permanently gone from that file. Keep a backup of your original PDF before removing any pages."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will removing pages affect the quality of the remaining pages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Removing pages deletes them from the document structure without affecting the remaining pages. All content on remaining pages is preserved exactly as in the original."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I remove all pages except specific ones from a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use the Split PDF tool for this purpose — specify the page range you want to keep, and it extracts just those pages, which is easier when keeping only a small subset."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a limit to how many pages I can remove from a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can remove as many pages as you like, up to all-but-one. The final PDF must contain at least one page. The only constraint is your device's local memory."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }
+

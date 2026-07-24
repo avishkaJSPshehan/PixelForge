@@ -602,6 +602,109 @@ export default function WatermarkPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Add a Watermark to a PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF onto the page. The tool will load a preview of your document so you can see exactly how the watermark will look before applying it.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Customise the watermark</div>
+                <div className="tool-step-desc">Enter your watermark text — such as &quot;CONFIDENTIAL&quot;, &quot;DRAFT&quot;, your company name, or any custom message. Adjust the font size, opacity, rotation angle, and position to place the watermark exactly where you want it on each page.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Apply and download</div>
+                <div className="tool-step-desc">Click &quot;Apply Watermark&quot;. The watermark will be stamped on every page of the PDF in your browser. Once done, click &quot;Download Watermarked PDF&quot; to save the finished document.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Watermarks are applied locally — your document never leaves your device.</strong> Cloud-based watermarking tools require you to upload your PDF to a remote server, which means a third party temporarily holds your document. PixelForge renders and watermarks each page entirely in your browser using the PDF.js rendering engine and pdf-lib. This is especially important for watermarking sensitive originals like contracts, certificates, or proprietary design documents.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Will the watermark be permanent?</div>
+              <div className="faq-answer">Yes. The watermark is embedded directly into the PDF pages as part of the document structure. It cannot be easily removed without specialised PDF editing software. However, we recommend keeping the original unwatermarked file as a backup, since the process is not reversible within PixelForge.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I watermark a PDF with an image instead of text?</div>
+              <div className="faq-answer">Currently, PixelForge supports text watermarks only. You can customise the font size, opacity, rotation, colour, and position of the text watermark to create a professional-looking result. Image watermark support is something we may add in the future.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will the watermark appear on every page?</div>
+              <div className="faq-answer">Yes. By default, the watermark is applied consistently to every page of the PDF document, ensuring all pages are marked uniformly. This is the standard requirement for most use cases like marking drafts or confidential documents.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I adjust the transparency of the watermark?</div>
+              <div className="faq-answer">Yes. The opacity (transparency) of the watermark is fully adjustable. A lower opacity creates a lighter, more subtle watermark that doesn&apos;t obscure the underlying content. A higher opacity creates a more prominent mark, which is useful for clearly indicating draft or confidential status.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Will the watermark be permanent on my PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The watermark is embedded directly into the PDF pages. It cannot be easily removed without specialised PDF editing software. Keep the original unwatermarked file as a backup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I watermark a PDF with an image instead of text?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Currently, PixelForge supports text watermarks only. You can customise font size, opacity, rotation, colour, and position of the text watermark."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the watermark appear on every page?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. By default, the watermark is applied consistently to every page of the PDF document, ensuring all pages are marked uniformly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I adjust the transparency of the watermark?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The opacity of the watermark is fully adjustable. A lower opacity creates a subtle watermark; a higher opacity creates a more prominent mark useful for draft or confidential labelling."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Toast */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>{toast.msg}</div>
@@ -609,3 +712,4 @@ export default function WatermarkPdfPage() {
     </>
   );
 }
+

@@ -299,6 +299,109 @@ export default function PptxToPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert PowerPoint to PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PowerPoint file</div>
+                <div className="tool-step-desc">Click the upload area or drag your .pptx file onto the page. PixelForge reads the presentation file directly in your browser using a JavaScript-based PPTX parser. No PowerPoint, Google Slides, or Office 365 subscription is needed.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Preview your slides</div>
+                <div className="tool-step-desc">PixelForge renders a preview of your presentation slides so you can verify that text, shapes, and layout are being interpreted correctly. Check the preview to ensure the content looks as expected before converting.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Convert to PDF and download</div>
+                <div className="tool-step-desc">Click &quot;Convert to PDF&quot;. The tool uses your browser&apos;s built-in print engine to produce a PDF document where each slide becomes a separate page. The PDF is generated and available for download in seconds, entirely offline.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Your presentation slides are converted in your browser, not on a server.</strong> Cloud-based PowerPoint-to-PDF converters upload your full presentation — which may contain confidential product roadmaps, financial projections, or client proposals — to an external server. PixelForge parses and renders your PPTX file entirely within your browser. Your slides never leave your device.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Does PixelForge support .ppt files (older PowerPoint format)?</div>
+              <div className="faq-answer">No. PixelForge supports the modern .pptx format (PowerPoint 2007 and later). If you have a .ppt file, open it in PowerPoint or Google Slides and save/export it as .pptx, then convert here.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will animations and transitions appear in the PDF?</div>
+              <div className="faq-answer">No. PDF is a static format and does not support animations or slide transitions. The PDF will capture each slide in its default state — the final, post-animation appearance. If a slide uses animation to reveal content progressively, the PDF will show the final fully-revealed state of the slide.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Why do some slides look different from my original presentation?</div>
+              <div className="faq-answer">Complex PowerPoint features — such as embedded videos, custom fonts not available in the browser, complex SmartArt, or gradient fills on shapes — may not render perfectly. For pixel-perfect conversion, PowerPoint&apos;s native &quot;Export to PDF&quot; feature in Microsoft Office will give the most accurate result.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Do I need Microsoft PowerPoint to use this tool?</div>
+              <div className="faq-answer">No. PixelForge uses a browser-based PPTX parser to read your presentation file without requiring any version of Microsoft Office or any other software installed on your device.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does PixelForge support .ppt files (older PowerPoint format)?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. PixelForge supports the modern .pptx format. For .ppt files, open them in PowerPoint or Google Slides and save as .pptx first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will animations and transitions appear in the PDF when converting from PowerPoint?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. PDF is a static format. Each slide will be captured in its final, post-animation state."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do some slides look different from my original PowerPoint presentation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Complex features like embedded videos, custom fonts, or SmartArt may not render perfectly. For pixel-perfect conversion, use PowerPoint's native Export to PDF feature."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need Microsoft PowerPoint to convert PPTX to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. PixelForge uses a browser-based PPTX parser. No version of Microsoft Office or any other software is required."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Toast */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>
@@ -308,3 +411,4 @@ export default function PptxToPdfPage() {
     </>
   );
 }
+

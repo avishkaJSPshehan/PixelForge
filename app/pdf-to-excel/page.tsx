@@ -295,9 +295,113 @@ export default function PdfToExcelPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert PDF to Excel</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF file onto the page. PixelForge reads the document in your browser and analyses the page content to detect tables and structured data, using PDF.js for text extraction.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Wait for table detection</div>
+                <div className="tool-step-desc">The tool processes your PDF page by page, identifying rows and columns based on text position and alignment. A progress indicator will show you which page is currently being analysed. Longer PDFs will take proportionally more time.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Download the Excel file</div>
+                <div className="tool-step-desc">Once extraction is complete, click &quot;Download Excel&quot; to save the .xlsx file. Each detected table section is placed in the spreadsheet. Open it in Excel, Google Sheets, or LibreOffice Calc to review and edit the extracted data.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>PDF tables are extracted in your browser — your data stays private.</strong> Financial reports, inventory sheets, budget PDFs, and similar data-heavy documents often contain information you would not want sent to a third-party server. PixelForge extracts table data entirely in your browser using PDF.js text extraction and the SheetJS library for Excel generation. No data from your PDF is ever transmitted to a server.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">What kinds of PDFs work best for conversion to Excel?</div>
+              <div className="faq-answer">PDFs with clear, text-based table structures work best — such as financial reports, price lists, data exports, or bank statements generated directly from software. Scanned PDFs (photos of documents) will not work well because they do not contain selectable text — only image pixels — which means the text extraction step cannot identify table content.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will all the tables from my PDF be extracted?</div>
+              <div className="faq-answer">PixelForge attempts to extract all tables across all pages of the PDF. The accuracy of extraction depends on how the tables were created in the original PDF. PDFs with embedded, machine-generated text and clear column alignment will convert most accurately. Complex multi-column layouts or merged cells may require manual cleanup in Excel after conversion.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Why does my Excel output look different from the PDF table?</div>
+              <div className="faq-answer">PDF does not store explicit table structure — it only stores text positions and visual formatting. PixelForge infers table rows and columns from text coordinates, which works well for standard tables but may misalign cells in complex or irregularly formatted layouts. For precise data extraction, consider using Adobe Acrobat Pro&apos;s Export to Excel function, which has deeper access to the PDF&apos;s internal structure.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I convert a multi-page PDF with many tables?</div>
+              <div className="faq-answer">Yes. PixelForge processes all pages of the PDF and combines the extracted data into a single .xlsx file. Each table section detected across all pages will be included. Longer PDFs may take more time to process, as all processing happens locally in your browser.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What kinds of PDFs work best for conversion to Excel?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PDFs with clear, text-based table structures work best — such as financial reports, price lists, or data exports generated directly from software. Scanned PDFs do not work as they contain only image pixels."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will all tables from my PDF be extracted to Excel?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge attempts to extract all tables across all pages. Accuracy depends on how the tables were created. Complex layouts or merged cells may require manual cleanup in Excel."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does my Excel output look different from the PDF table?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PDF does not store explicit table structure — only text positions. PixelForge infers rows and columns from coordinates, which works well for standard tables but may misalign in complex layouts."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert a multi-page PDF with many tables to Excel?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. PixelForge processes all pages and combines extracted data into a single .xlsx file. Longer PDFs may take more time since processing happens locally in your browser."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {toast && (
         <div className={`toast toast-${toast.type}`}>{toast.msg}</div>
       )}
     </>
   );
 }
+

@@ -15,8 +15,7 @@ export default function ContactPage() {
       setError('Please fill in all required fields.');
       return;
     }
-    // mailto fallback - opens the default mail client
-    const mailtoLink = `mailto:support@pixel-forge.online?subject=${encodeURIComponent(form.subject || 'PixelForge Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
+    const mailtoLink = `mailto:[YOUR EMAIL]?subject=${encodeURIComponent(form.subject || 'PixelForge Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
     window.location.href = mailtoLink;
     setSent(true);
     setError('');
@@ -27,11 +26,11 @@ export default function ContactPage() {
       <Navbar />
       <main className="page-content">
         <div className="container">
-          <div style={{ maxWidth: 640, margin: '0 auto', paddingTop: 28, paddingBottom: 80 }}>
+          <div style={{ maxWidth: 680, margin: '0 auto', paddingTop: 28, paddingBottom: 80 }}>
 
             <Link href="/" className="back-btn">← Back to Home</Link>
 
-            <div className="tool-header animate-in" style={{ textAlign: 'left', marginBottom: 40 }}>
+            <div className="tool-header animate-in" style={{ textAlign: 'left', marginBottom: 32 }}>
               <div
                 className="tool-header-icon"
                 style={{
@@ -42,37 +41,83 @@ export default function ContactPage() {
                 ✉️
               </div>
               <h1>Contact Us</h1>
-              <p>Have a question, bug report, or feature request? We&apos;d love to hear from you.</p>
+              <p>
+                PixelForge is built and maintained by <strong>ByteBuilders</strong>. We read every
+                message we receive — your feedback genuinely shapes what we build next.
+              </p>
             </div>
 
             <div className="animate-in delay-1">
-              {/* Info cards */}
+
+              {/* Contact info cards */}
               <div className="contact-info-grid">
                 <div className="contact-info-card">
                   <span className="contact-info-icon">📧</span>
                   <div>
                     <div className="contact-info-label">Email</div>
-                    <a href="mailto:support@pixel-forge.online" className="contact-info-value">
-                      support@pixel-forge.online
+                    <a href="mailto:[YOUR EMAIL]" className="contact-info-value">
+                      [YOUR EMAIL]
                     </a>
+                  </div>
+                </div>
+                <div className="contact-info-card">
+                  <span className="contact-info-icon">💬</span>
+                  <div>
+                    <div className="contact-info-label">WhatsApp</div>
+                    <a
+                      href="https://wa.me/[YOUR WHATSAPP NUMBER]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-info-value"
+                    >
+                      [YOUR WHATSAPP NUMBER]
+                    </a>
+                  </div>
+                </div>
+                <div className="contact-info-card">
+                  <span className="contact-info-icon">🏢</span>
+                  <div>
+                    <div className="contact-info-label">Company</div>
+                    <div className="contact-info-value">ByteBuilders</div>
                   </div>
                 </div>
                 <div className="contact-info-card">
                   <span className="contact-info-icon">⚡</span>
                   <div>
                     <div className="contact-info-label">Response Time</div>
-                    <div className="contact-info-value">Within 48 hours</div>
+                    <div className="contact-info-value">1–2 business days</div>
                   </div>
+                </div>
+              </div>
+
+              {/* Common reasons to reach out */}
+              <div className="contact-reasons">
+                <div className="contact-reasons-title">Common reasons people reach out</div>
+                <div className="contact-reason-item">
+                  <span className="contact-reason-icon">🐛</span>
+                  <span><strong>Bug reports</strong> — Something isn&apos;t working as expected? Tell us exactly what happened and we&apos;ll investigate.</span>
+                </div>
+                <div className="contact-reason-item">
+                  <span className="contact-reason-icon">💡</span>
+                  <span><strong>Tool requests</strong> — Got an idea for a new file tool you wish existed? We&apos;re always looking for what to build next.</span>
+                </div>
+                <div className="contact-reason-item">
+                  <span className="contact-reason-icon">💼</span>
+                  <span><strong>Business inquiries</strong> — Partnership, licensing, or commercial enquiries? Reach out and we&apos;ll get back to you.</span>
+                </div>
+                <div className="contact-reason-item">
+                  <span className="contact-reason-icon">💬</span>
+                  <span><strong>General feedback</strong> — Enjoying PixelForge? Have a suggestion? We genuinely love hearing from users.</span>
                 </div>
               </div>
 
               {/* Contact form */}
               {!sent ? (
-                <form className="contact-form glass-card" onSubmit={handleSubmit} noValidate>
+                <form className="contact-form glass-card" onSubmit={handleSubmit} noValidate style={{ marginTop: 28 }}>
                   <div className="contact-form-title">Send a Message</div>
 
                   <div className="contact-form-row">
-                    <div className="contact-field-group">
+                    <div className="contact-field-group" style={{ marginBottom: 0 }}>
                       <label htmlFor="contact-name" className="contact-field-label">Name <span className="contact-required">*</span></label>
                       <input
                         id="contact-name"
@@ -84,7 +129,7 @@ export default function ContactPage() {
                         required
                       />
                     </div>
-                    <div className="contact-field-group">
+                    <div className="contact-field-group" style={{ marginBottom: 0 }}>
                       <label htmlFor="contact-email" className="contact-field-label">Email <span className="contact-required">*</span></label>
                       <input
                         id="contact-email"
@@ -98,13 +143,13 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="contact-field-group">
+                  <div className="contact-field-group" style={{ marginTop: 16 }}>
                     <label htmlFor="contact-subject" className="contact-field-label">Subject</label>
                     <input
                       id="contact-subject"
                       type="text"
                       className="contact-field-input"
-                      placeholder="e.g. Bug report, Feature request…"
+                      placeholder="e.g. Bug report, Feature request, Business inquiry…"
                       value={form.subject}
                       onChange={e => setForm({ ...form, subject: e.target.value })}
                     />
@@ -115,7 +160,7 @@ export default function ContactPage() {
                     <textarea
                       id="contact-message"
                       className="contact-field-input contact-field-textarea"
-                      placeholder="Describe your question or issue in detail…"
+                      placeholder="Describe your question, bug, or idea in as much detail as you can…"
                       rows={5}
                       value={form.message}
                       onChange={e => setForm({ ...form, message: e.target.value })}
@@ -128,23 +173,30 @@ export default function ContactPage() {
                   <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: 15, marginTop: 4 }}>
                     ✉️ Send Message
                   </button>
+
+                  <p style={{ fontSize: 12, color: 'var(--text-muted)', textAlign: 'center', marginTop: 12 }}>
+                    This opens your default email client. Alternatively, email us directly at{' '}
+                    <a href="mailto:[YOUR EMAIL]" style={{ color: 'var(--primary)' }}>[YOUR EMAIL]</a>.
+                  </p>
                 </form>
               ) : (
-                <div className="glass-card animate-fade" style={{ padding: '40px 32px', textAlign: 'center' }}>
+                <div className="glass-card animate-fade" style={{ padding: '40px 32px', textAlign: 'center', marginTop: 28 }}>
                   <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
                   <h3 style={{ marginBottom: 8 }}>Message Ready to Send</h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: 14 }}>
-                    Your default mail app has been opened with the message. Please click Send in your email client.
+                    Your default mail app has been opened with the message pre-filled. Please click
+                    Send in your email client. We typically respond within 1–2 business days.
                   </p>
                   <button
                     className="btn btn-secondary"
                     onClick={() => setSent(false)}
                     style={{ marginTop: 20 }}
                   >
-                    Send Another
+                    Send Another Message
                   </button>
                 </div>
               )}
+
             </div>
           </div>
         </div>

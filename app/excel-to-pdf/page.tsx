@@ -427,9 +427,113 @@ export default function ExcelToPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert Excel to PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your Excel spreadsheet</div>
+                <div className="tool-step-desc">Click the upload area or drag your .xlsx, .xls, .xlsm, or .xlsb file onto the page. PixelForge reads the spreadsheet in your browser using the SheetJS library to parse the file contents — no Excel or Microsoft 365 required.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Preview the spreadsheet</div>
+                <div className="tool-step-desc">PixelForge renders your spreadsheet as an HTML table so you can check that columns, rows, and data are displaying correctly. If your workbook has multiple sheets, they will each be displayed in sequence. Review before converting to ensure the output looks as expected.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Convert to PDF and download</div>
+                <div className="tool-step-desc">Click &quot;Convert to PDF&quot;. The tool uses your browser&apos;s print engine to render the table as a PDF, with landscape orientation optimised for wide spreadsheets. The PDF is generated locally and ready to download with no waiting.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Your spreadsheet data is never sent to a server.</strong> Excel files often contain sensitive financial data, payroll information, sales figures, or business metrics. Cloud-based Excel-to-PDF converters receive your full spreadsheet on their servers before conversion. PixelForge converts Excel to PDF entirely within your browser using SheetJS for parsing and your browser&apos;s native print-to-PDF capability. Your data stays on your device from start to finish.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Does PixelForge support all Excel file formats?</div>
+              <div className="faq-answer">PixelForge supports .xlsx, .xls, .xlsm, and .xlsb files. These cover the vast majority of Excel workbooks created by Microsoft Excel 97 and later versions. .csv files are not processed here — to convert a CSV, open it in Excel, save it as .xlsx, then convert.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will all sheets in my workbook be converted?</div>
+              <div className="faq-answer">Yes. All sheets in the workbook are parsed and rendered in sequence. Each sheet will appear as a separate section in the PDF, allowing the entire workbook to be captured in one document.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Why do wide spreadsheets get cut off in the PDF?</div>
+              <div className="faq-answer">Very wide spreadsheets with many columns may extend beyond standard PDF page width. PixelForge uses landscape orientation to maximise horizontal space, but extremely wide sheets may still wrap. For best results, reduce column widths or select a smaller paper size in your browser&apos;s print settings before saving the PDF.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will charts and graphs from my Excel file appear in the PDF?</div>
+              <div className="faq-answer">Currently, PixelForge converts the tabular data (cells and text values) from your Excel file. Charts and embedded graphs are not guaranteed to render, as they are stored as separate objects in the Excel file format. For exact chart rendering, Excel&apos;s own &quot;Save as PDF&quot; or &quot;Print to PDF&quot; option will give the most accurate result.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does PixelForge support all Excel file formats for PDF conversion?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge supports .xlsx, .xls, .xlsm, and .xlsb files. For .csv files, open in Excel, save as .xlsx, then convert."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will all sheets in my Excel workbook be converted to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. All sheets are parsed and rendered in sequence. Each sheet appears as a separate section in the PDF."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do wide spreadsheets get cut off in the Excel to PDF output?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Very wide sheets may extend beyond standard page width. PixelForge uses landscape orientation, but extremely wide sheets may still wrap. Reduce column widths or adjust paper size for better results."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will charts from my Excel file appear in the PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Charts are not guaranteed to render. For exact chart rendering, use Excel's own Save as PDF option for the most accurate result."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {toast && (
         <div className={`toast toast-${toast.type}`}>{toast.msg}</div>
       )}
     </>
   );
 }
+

@@ -383,9 +383,113 @@ export default function CompressPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Compress a PDF File</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF file onto the page. PixelForge displays the original file size so you know your starting point. Any valid PDF file is accepted, regardless of content type.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Choose a compression level</div>
+                <div className="tool-step-desc">Select how aggressively you want to compress the file. <strong>Low</strong> preserves the most quality with modest size reduction. <strong>Medium</strong> gives a good balance for most documents. <strong>High</strong> maximises size reduction, which may reduce image sharpness in image-heavy PDFs.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Compress and download</div>
+                <div className="tool-step-desc">Click &quot;Compress PDF&quot;. The tool re-encodes images in the PDF at the selected quality level. Once complete, you&apos;ll see the new file size and how much space was saved — then click &quot;Download Compressed PDF&quot; to save it.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Compression happens entirely in your browser.</strong> Other online PDF compression tools must upload your document to their server, process it remotely, and send it back. With PixelForge, your PDF is rendered and re-compressed locally using in-browser image processing. The file never leaves your device, which matters when the PDF contains invoices, signed agreements, HR documents, or other private materials you wouldn&apos;t want sitting on a stranger&apos;s server.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">How does PixelForge compress a PDF?</div>
+              <div className="faq-answer">PixelForge renders each page of your PDF to an image canvas in the browser, re-encodes those images at a reduced JPEG quality, and rebuilds a new PDF from those compressed images. This approach is most effective on PDFs that are large because of embedded high-resolution photographs or scanned pages. PDFs made up primarily of text and vector graphics may see less reduction.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will compressing a PDF make it harder to read?</div>
+              <div className="faq-answer">At Low and Medium compression levels, the visual quality is generally very good and the document remains perfectly readable on screen and in print. High compression is designed for when file size is the top priority — such as email attachments or web uploads — and may make fine text or images slightly less sharp at high zoom levels.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Why didn&apos;t my PDF get smaller after compressing?</div>
+              <div className="faq-answer">If your PDF is primarily made up of vector graphics, clean typography, or already-compressed images, there may be little room for further reduction. The compression works best on scanned documents and image-heavy files. Text-only PDFs are often already very efficient and may not reduce significantly.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Is there a file size limit for PDF compression?</div>
+              <div className="faq-answer">There is no imposed limit. However, very large PDFs (50MB+) may take longer to process since everything runs in your browser on your own device. If your browser becomes unresponsive, try a lower-resolution compression setting or process the file in a split section first.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does PixelForge compress a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge renders each page of your PDF to an image canvas in the browser, re-encodes those images at a reduced JPEG quality, and rebuilds a new PDF from those compressed images. This approach is most effective on PDFs that are large because of embedded high-resolution photographs or scanned pages."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will compressing a PDF make it harder to read?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "At Low and Medium compression levels, the visual quality is generally very good and the document remains perfectly readable on screen and in print. High compression may make fine text or images slightly less sharp at high zoom levels."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why didn't my PDF get smaller after compressing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If your PDF is primarily made up of vector graphics, clean typography, or already-compressed images, there may be little room for further reduction. The compression works best on scanned documents and image-heavy files."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a file size limit for PDF compression on PixelForge?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no imposed limit. However, very large PDFs may take longer to process since everything runs in your browser. If your browser becomes unresponsive, try a lower compression setting."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {toast && (
         <div className={`toast toast-${toast.type}`}>{toast.msg}</div>
       )}
     </>
   );
 }
+

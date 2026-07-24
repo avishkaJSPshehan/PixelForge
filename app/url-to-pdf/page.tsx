@@ -355,6 +355,109 @@ export default function UrlToPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert a URL to PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Enter the page URL</div>
+                <div className="tool-step-desc">Type or paste the full URL of the web page you want to convert into the input field — for example, https://example.com/article. Make sure the URL includes the https:// or http:// prefix. The page must be publicly accessible (not behind a login).</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Fetch and preview the page</div>
+                <div className="tool-step-desc">Click &quot;Fetch Page&quot;. PixelForge uses a proxy to retrieve the HTML content of the URL and renders it in your browser. Check the preview to confirm the content looks correct — some pages may look slightly different depending on their use of JavaScript or external resources.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Convert and download</div>
+                <div className="tool-step-desc">Click &quot;Convert to PDF&quot;. Your browser&apos;s print engine renders the fetched page as a PDF document. The resulting PDF is available to download immediately. Page layout and formatting will follow your browser&apos;s print rendering rules.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Note on privacy for URL-to-PDF:</strong> Unlike other PixelForge tools where processing is fully local, the URL-to-PDF tool uses a server-side proxy to fetch the target web page&apos;s HTML (since browsers block direct cross-origin fetches). Only the URL you provide is sent to the proxy. The HTML content is returned to your browser and the PDF is generated locally using your browser&apos;s print engine. No PDF is generated or stored on any server.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Why can&apos;t I convert a page that requires login?</div>
+              <div className="faq-answer">The proxy fetches the page as an anonymous visitor. Pages behind login walls, paywalls, or requiring session cookies will not render correctly — the proxy will likely see the login page or an error page instead. For pages requiring authentication, use your browser&apos;s native &quot;Print to PDF&quot; option while logged in, as it has access to your session.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Why does the converted PDF look different from the live web page?</div>
+              <div className="faq-answer">Several factors can cause differences: JavaScript-rendered content (e.g. components that load via AJAX) may not appear since the proxy fetches raw HTML; some CSS may reference external resources that don&apos;t load; and the browser&apos;s print rendering strips interactive elements. For the most accurate result, use your browser&apos;s native Print to PDF on the live page.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I convert an article or blog post to PDF to read offline?</div>
+              <div className="faq-answer">Yes. Converting articles, documentation pages, reports, and blog posts to PDF works well with this tool. Static, text-heavy pages with simple layouts render most reliably. You can then save the PDF to any device or e-reader for offline reading.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Are there any websites I cannot convert?</div>
+              <div className="faq-answer">Some websites block proxy requests (through CORS, robots.txt, or server-level blocking), which means the fetch will fail. Websites that require JavaScript to render their content (single-page apps, infinite scroll pages, etc.) may also not appear correctly. Very large or complex pages may take longer to fetch and render.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why can't I convert a page that requires login using URL to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The proxy fetches pages as an anonymous visitor and cannot access pages behind login walls. Use your browser's native Print to PDF while logged in for authenticated pages."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does the URL to PDF converted output look different from the live page?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "JavaScript-rendered content, external CSS, and interactive elements may not appear correctly since the proxy fetches raw HTML. For the most accurate result, use your browser's Print to PDF on the live page."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert an article or blog post to PDF to read offline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Static, text-heavy pages like articles, documentation, and blog posts render most reliably. You can save the PDF to any device for offline reading."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are there any websites I cannot convert to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Some websites block proxy requests or require JavaScript to render content. Single-page apps, pages with infinite scroll, or sites that block external fetches may not convert correctly."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Hidden print iframe */}
       <iframe
         ref={printIframeRef}
@@ -373,3 +476,4 @@ export default function UrlToPdfPage() {
     </>
   );
 }
+

@@ -196,6 +196,109 @@ export default function PdfToImagePage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert a PDF to Images</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF file onto the page. PixelForge loads the document entirely in your browser using PDF.js and will display how many pages it contains.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Choose your settings</div>
+                <div className="tool-step-desc">Select the output format (JPG for smaller files, PNG for higher quality with transparency support) and the resolution/scale. Higher scale values produce sharper images suitable for printing; lower values are better for web or email sharing.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Convert and download</div>
+                <div className="tool-step-desc">Click &quot;Convert to Images&quot;. Each page is rendered to a separate image file in your browser. You can then download individual pages or save all images at once as a ZIP archive — all without any file leaving your device.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>PDF pages are rendered on your device, not in the cloud.</strong> Most PDF-to-image conversion services require uploading your document to a remote server where pages are rendered and sent back as images. This creates a window during which your PDF exists on someone else&apos;s infrastructure. PixelForge renders every page directly in your browser using WebAssembly-powered PDF.js — your document is never transmitted, and image generation is instant with no waiting for server round-trips.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Should I choose JPG or PNG when converting a PDF to images?</div>
+              <div className="faq-answer">Choose JPG if you need smaller file sizes and the PDF does not contain transparent elements. JPG works well for scanned documents and photo-heavy PDFs. Choose PNG if you need lossless quality or the PDF contains text, diagrams, or transparency — PNG will preserve crispness and any transparent backgrounds that exist in the original.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">How do I convert only specific pages of a PDF to images?</div>
+              <div className="faq-answer">After converting, you can simply download the individual page images you want and ignore the rest. Alternatively, use the <a href="/split-pdf">Split PDF tool</a> first to extract only the pages you need, then convert the resulting smaller PDF to images.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">What resolution are the output images?</div>
+              <div className="faq-answer">The output resolution depends on the scale setting you choose. A scale of 1.5x produces images roughly equivalent to 108 DPI; 2x produces approximately 144 DPI; and 3x produces approximately 216 DPI. Higher scale settings are recommended if you plan to print the images.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I convert a password-protected PDF to images?</div>
+              <div className="faq-answer">If the PDF is password-protected, the tool will not be able to render it unless you provide the password. Use the browser&apos;s built-in PDF viewer to unlock the file first, or use our <a href="/protect-pdf">Protect PDF</a> tool to manage encryption, then convert.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Should I choose JPG or PNG when converting a PDF to images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Choose JPG for smaller file sizes. Choose PNG for lossless quality, especially if the PDF contains text, diagrams, or transparent elements — PNG preserves crispness and transparency."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I convert only specific pages of a PDF to images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "After converting, download only the individual page images you want. Alternatively, use the Split PDF tool first to extract specific pages, then convert that smaller PDF to images."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What resolution are the output images when converting PDF to images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Output resolution depends on the scale setting chosen. Higher scale settings produce sharper images and are recommended for printing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert a password-protected PDF to images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Password-protected PDFs cannot be converted until unlocked. Unlock the file in your browser's PDF viewer first, then convert."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Toast */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>
@@ -205,3 +308,4 @@ export default function PdfToImagePage() {
     </>
   );
 }
+

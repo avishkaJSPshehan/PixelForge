@@ -452,9 +452,113 @@ export default function ProtectPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Password-Protect a PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF file onto the page. PixelForge reads the file in your browser and prepares it for encryption. The file size and page count will be shown so you can confirm it&apos;s the right document.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Set a password</div>
+                <div className="tool-step-desc">Enter the password you want to set for the PDF. Use a strong password — a mix of upper and lowercase letters, numbers, and symbols. Make sure you keep a record of the password somewhere safe, as there is no way to recover an encrypted PDF if the password is lost.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Protect and download</div>
+                <div className="tool-step-desc">Click &quot;Protect PDF&quot;. The file is encrypted using PDF standard encryption entirely within your browser. Download the protected PDF and share it securely — recipients will need to enter the password to open it in any PDF viewer.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Encryption is applied in your browser — your password and document stay private.</strong> Cloud-based PDF protection tools require you to send both your document AND your chosen password to a remote server for encryption. This is a significant security risk — it means both the unencrypted file and the key to access it pass through someone else&apos;s infrastructure. PixelForge encrypts your PDF using pdf-lib entirely in your browser. Neither your document nor your password is ever transmitted to any server.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">What type of encryption does PixelForge use to protect PDFs?</div>
+              <div className="faq-answer">PixelForge uses the PDF standard&apos;s built-in password encryption, which is applied via the pdf-lib library in your browser. The resulting protected PDF follows the PDF specification&apos;s encryption standard and can be opened by any standard PDF reader (Adobe Acrobat, Foxit, Preview on Mac, etc.) that prompts for a password.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I remove the password from a PDF I protected with PixelForge?</div>
+              <div className="faq-answer">Yes, but you need to know the original password. Use a PDF tool that supports decryption — open the protected PDF, enter the password, and then save/export it without encryption. PixelForge does not currently offer a dedicated &quot;remove password&quot; tool, but most desktop PDF applications can do this.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will a password-protected PDF work on all devices?</div>
+              <div className="faq-answer">Yes. PDF password protection is a standard feature that is universally supported by PDF viewers on all platforms — Windows, Mac, iOS, Android, and Linux. Recipients will be prompted to enter the password when they try to open the file.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">What happens if I lose the password?</div>
+              <div className="faq-answer">If you lose the password to a PDF you protected, there is no way to recover it from within PixelForge. We do not store your passwords anywhere. Password recovery for encrypted PDFs requires specialised (and often paid) tools that attempt to crack the password — a process that is not guaranteed to succeed. Always store your password securely before protecting a PDF.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What type of encryption does PixelForge use to protect PDFs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge uses the PDF standard's built-in password encryption via the pdf-lib library. The result follows the PDF specification and can be opened by any standard PDF reader that prompts for a password."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I remove the password from a PDF I protected with PixelForge?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, if you know the original password. Open the protected PDF in any PDF application, enter the password, and save/export it without encryption. PixelForge does not currently offer a dedicated remove password tool."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will a password-protected PDF work on all devices?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. PDF password protection is universally supported by PDF viewers on all platforms — Windows, Mac, iOS, Android, and Linux."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if I lose the password for a PDF I protected?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge does not store your passwords. Password recovery requires specialised third-party tools. Always store your password securely before protecting a PDF."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {toast && (
         <div className={`toast toast-${toast.type}`}>{toast.msg}</div>
       )}
     </>
   );
 }
+

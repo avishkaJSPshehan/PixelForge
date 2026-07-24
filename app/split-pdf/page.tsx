@@ -392,6 +392,109 @@ export default function SplitPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Split a PDF File</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF file onto the page. PixelForge will read the document in your browser and display the total number of pages so you can plan your split.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Set the page range</div>
+                <div className="tool-step-desc">Enter the starting and ending page numbers for the section you want to extract. For example, to extract pages 3 through 7 from a 20-page document, enter &quot;From: 3, To: 7&quot;. Use the +/− steppers or type directly into the fields.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Split and download</div>
+                <div className="tool-step-desc">Click &quot;Split PDF&quot;. Your browser will extract the selected pages into a new PDF file. Click &quot;Download Split PDF&quot; to save the result. Repeat the process with different page ranges to extract multiple sections.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Split PDFs without uploading anywhere.</strong> Cloud-based PDF splitters require your file to travel to a remote server and back — potentially exposing confidential page content during transit or storage. PixelForge splits PDFs directly in your browser. Your document never leaves your machine. This is especially important when splitting multi-page contracts, legal filings, or medical reports where individual pages may contain sensitive information.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Can I extract individual pages instead of a range?</div>
+              <div className="faq-answer">Yes. To extract a single page, set both the &quot;From&quot; and &quot;To&quot; values to the same page number. For example, entering &quot;From: 5, To: 5&quot; extracts just page 5 as a separate PDF document.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will splitting affect the quality of images or text in my PDF?</div>
+              <div className="faq-answer">No. Splitting extracts pages at the document structure level without re-rendering or re-compressing anything. All content — text, images, hyperlinks, and embedded fonts — is preserved exactly as it appears in the original file.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Is there a limit on how many pages I can split from a PDF?</div>
+              <div className="faq-answer">There is no page limit. You can split a single page, or extract almost all pages from a very long document. The only constraint is your device&apos;s available memory, since the file is processed locally in your browser.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Is it safe to split confidential PDF documents here?</div>
+              <div className="faq-answer">Yes. PixelForge splits PDFs entirely within your browser — your file is never transmitted to a server. Once you close the tab, the document is cleared from memory. This makes it safe to split sensitive legal, medical, or financial documents.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I extract individual pages instead of a range when splitting a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. To extract a single page, set both the 'From' and 'To' values to the same page number. For example, entering 'From: 5, To: 5' extracts just page 5 as a separate PDF document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will splitting a PDF affect the quality of images or text?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Splitting extracts pages at the document structure level without re-rendering or re-compressing anything. All content — text, images, hyperlinks, and embedded fonts — is preserved exactly as it appears in the original file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a limit on how many pages I can split from a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no page limit. The only constraint is your device's available memory, since the file is processed locally in your browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is it safe to split confidential PDF documents on PixelForge?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. PixelForge splits PDFs entirely within your browser — your file is never transmitted to a server. Once you close the tab, the document is cleared from memory."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Toast */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>
@@ -401,3 +504,4 @@ export default function SplitPdfPage() {
     </>
   );
 }
+
