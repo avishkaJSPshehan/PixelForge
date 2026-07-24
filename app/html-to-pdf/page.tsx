@@ -260,6 +260,109 @@ export default function HtmlToPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert HTML to PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your HTML file</div>
+                <div className="tool-step-desc">Click the upload area or drag your .html or .htm file onto the page. PixelForge loads the file in a sandboxed iframe within your browser, rendering it as it would appear in a browser window — including any inline CSS styles embedded in the file.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Preview the rendered HTML</div>
+                <div className="tool-step-desc">Check the rendered preview to make sure the content looks correct. If external stylesheets or fonts are referenced by URL, they will be loaded from the web. If they are local files, they won&apos;t be available — embed styles inline for best results.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Convert to PDF and download</div>
+                <div className="tool-step-desc">Click &quot;Convert to PDF&quot;. Your browser&apos;s built-in print engine renders the HTML to a PDF document with proper page breaks and margins. The PDF is generated entirely in your browser and ready to download immediately.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Your HTML file is rendered and converted entirely in your browser.</strong> Unlike cloud-based HTML-to-PDF converters that require sending your markup to a headless browser running on a remote server, PixelForge renders your HTML in your own browser&apos;s engine. Your file content is never transmitted to any third party. This is important when converting HTML templates, reports, or internal documents that contain proprietary data.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Will external images and stylesheets load in the PDF?</div>
+              <div className="faq-answer">External resources loaded from the web (via http:// or https:// URLs) will generally load correctly as long as you are connected to the internet and the resources are publicly accessible. However, local file references (e.g., href=&quot;style.css&quot; pointing to a file on your hard drive) will not load, since the browser sandboxes local file access. Embed all styles inline in the HTML file for the most reliable output.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I convert an HTML file with JavaScript interactivity to PDF?</div>
+              <div className="faq-answer">The PDF will capture the static state of the page as it appears after initial render. Interactive elements like dropdown menus, modals, or JavaScript-driven animations will be shown in their default state. Dynamic content that requires user interaction to appear will not be visible in the PDF.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">How do I control page breaks in the output PDF?</div>
+              <div className="faq-answer">You can use the CSS <code>page-break-before</code>, <code>page-break-after</code>, and <code>break-inside: avoid</code> properties in your HTML file to control where page breaks occur. Add <code>@page {'{'} margin: 1cm; {'}'}</code> in a style tag to set margins. These CSS properties are respected by the browser&apos;s print engine used to generate the PDF.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I convert multiple HTML files into one PDF?</div>
+              <div className="faq-answer">PixelForge converts one HTML file at a time. If you need multiple HTML files in one PDF, consider combining them into a single HTML file (using the appropriate page-break CSS), or converting each separately and then using the <a href="/merge-pdf">Merge PDF tool</a> to combine the resulting PDFs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Will external images and stylesheets load in the HTML to PDF conversion?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "External web resources generally load if publicly accessible. Local file references won't load — embed all styles inline in the HTML file for best results."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert an HTML file with JavaScript interactivity to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The PDF captures the static state after initial render. Dynamic content requiring user interaction will appear in its default state."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I control page breaks in the HTML to PDF output?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use the CSS page-break-before, page-break-after, and break-inside: avoid properties in your HTML to control page breaks. Add @page { margin: 1cm; } in a style tag to set margins."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert multiple HTML files into one PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge converts one HTML file at a time. Combine multiple HTML files into one, or use the Merge PDF tool to combine separately converted PDFs."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Hidden print iframe - invisible to user */}
       <iframe
         ref={printIframeRef}
@@ -278,3 +381,4 @@ export default function HtmlToPdfPage() {
     </>
   );
 }
+

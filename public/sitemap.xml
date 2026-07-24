@@ -143,7 +143,7 @@
   <!-- About Us -->
   <url>
     <loc>https://www.pixel-forge.online/about</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -151,7 +151,7 @@
   <!-- Contact Us -->
   <url>
     <loc>https://www.pixel-forge.online/contact</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -159,7 +159,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://www.pixel-forge.online/privacy</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -167,7 +167,7 @@
   <!-- Terms & Conditions -->
   <url>
     <loc>https://www.pixel-forge.online/terms</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

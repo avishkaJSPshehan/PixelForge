@@ -323,6 +323,109 @@ export default function MergePdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Merge PDF Files</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF files</div>
+                <div className="tool-step-desc">Click the upload area or drag and drop multiple PDF files onto the page. You can add as many PDFs as you need — there&apos;s no limit. Each file will appear as a thumbnail card in the order it was added.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Arrange the order</div>
+                <div className="tool-step-desc">Drag and drop the PDF thumbnail cards to set the exact order you want in the final merged document. The number badge on each card shows its current position. Use the &times; button to remove any file you no longer want included.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Merge and download</div>
+                <div className="tool-step-desc">Click &quot;Merge PDFs&quot; and your browser will combine all the files into a single PDF document in seconds. When it&apos;s ready, click &quot;Download Merged PDF&quot; to save the result to your device.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Your files stay on your device.</strong> Unlike most online PDF mergers that upload your documents to a cloud server for processing, PixelForge merges PDFs entirely inside your browser using the <em>pdf-lib</em> library. Your files are never transmitted over the internet, never stored on any server, and are automatically cleared from memory when you close the tab. This makes it safe to merge sensitive documents — contracts, medical records, financial statements — without worrying about where your data ends up.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Is it safe to merge PDFs here?</div>
+              <div className="faq-answer">Yes. PixelForge merges PDFs entirely within your browser — your files are never uploaded to any server. The merging process uses JavaScript running locally on your device, so your documents remain completely private. See our <a href="/privacy">Privacy Policy</a> for full details.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Is there a file size or file count limit?</div>
+              <div className="faq-answer">There is no hard limit on the number of PDFs you can merge. However, because processing happens in your browser, very large files (hundreds of MB) may be slow depending on your device&apos;s RAM and CPU. For best performance with large files, we recommend merging in batches.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will the quality of my PDFs be affected?</div>
+              <div className="faq-answer">No. PixelForge merges PDFs by combining their pages at the document structure level, not by re-rendering or re-compressing the content. Text, images, and vector graphics are preserved at their original quality. The output file is a clean, standard PDF containing all the pages from your input files.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Do I need to create an account?</div>
+              <div className="faq-answer">No account is required. PixelForge is completely free to use without signing up, entering an email address, or providing any personal information. Just upload your files and merge.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is it safe to merge PDFs here?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. PixelForge merges PDFs entirely within your browser — your files are never uploaded to any server. The merging process uses JavaScript running locally on your device, so your documents remain completely private."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a file size or file count limit when merging PDFs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no hard limit on the number of PDFs you can merge. However, because processing happens in your browser, very large files may be slow depending on your device's RAM and CPU. For best performance with large files, merge in batches."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the quality of my PDFs be affected when merging?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. PixelForge merges PDFs by combining their pages at the document structure level — text, images, and vector graphics are preserved at their original quality."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to create an account to merge PDFs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No account is required. PixelForge is completely free to use without signing up, entering an email address, or providing any personal information."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Toast */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>
@@ -332,3 +435,4 @@ export default function MergePdfPage() {
     </>
   );
 }
+

@@ -545,7 +545,111 @@ export default function PageNumbersPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Add Page Numbers to a PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your PDF</div>
+                <div className="tool-step-desc">Click the upload area or drag your PDF file onto the page. PixelForge loads the document in your browser and shows you a live preview so you can see how the page numbers will be positioned before committing.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Configure your page number style</div>
+                <div className="tool-step-desc">Choose where to place the numbers (top-left, top-center, top-right, bottom-left, bottom-center, or bottom-right), the starting number, font size, and optionally a prefix or suffix (e.g. &quot;Page 1 of N&quot; format). Adjust until the preview looks exactly right.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Apply and download</div>
+                <div className="tool-step-desc">Click &quot;Add Page Numbers&quot;. The numbers are stamped onto every page of the PDF within your browser. Once done, download the resulting file. The whole process is instant and offline — no server required.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Page numbers are added entirely in your browser.</strong> Server-based PDF tools that add page numbers must receive your full document before they can process it. PixelForge uses pdf-lib to embed page number stamps directly into your PDF within your browser. Your document never leaves your device at any point. This is particularly important when numbering confidential multi-page reports, legal briefs, or financial statements that should not be transmitted to third parties.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Can I start the page numbering from a number other than 1?</div>
+              <div className="faq-answer">Yes. You can set any starting number you choose. This is useful when this PDF is one section of a larger document — for example, if the preceding section ends on page 24, you can start numbering this document at 25 so that page numbers are continuous across the full report.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I skip the first page (e.g. a title or cover page) when numbering?</div>
+              <div className="faq-answer">Yes. You can configure the tool to skip the first N pages when stamping numbers, so your cover page or table of contents is left unmarked while the rest of the document is numbered correctly.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Will existing content on the PDF be covered by the page numbers?</div>
+              <div className="faq-answer">Page numbers are small and placed at the margins. If your PDF has text or images that extend to the very edge of the page with no margin, there may be overlap. In practice, most professionally laid-out PDFs leave enough margin space for page numbers to sit clearly without obscuring any content.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I remove page numbers from a PDF?</div>
+              <div className="faq-answer">Once page numbers are embedded into a PDF, removing them requires a full PDF editing tool that can identify and delete content elements. PixelForge does not currently offer a &quot;remove page numbers&quot; feature. We recommend keeping the original un-numbered PDF as a backup before applying numbers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I start the page numbering from a number other than 1?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can set any starting number you choose. This is useful when this PDF is one section of a larger document and you want continuous page numbers across the full report."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I skip the first page when numbering a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can configure the tool to skip the first N pages when stamping numbers, so your cover page or table of contents is left unmarked."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will existing content on the PDF be covered by the page numbers?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Page numbers are placed at the margins. Most professionally laid-out PDFs leave enough margin space for page numbers to sit clearly without obscuring content."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I remove page numbers from a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Once embedded, page numbers require a full PDF editor to remove. PixelForge does not currently offer a remove page numbers feature. Keep the original un-numbered PDF as a backup."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {toast && <div className={`toast toast-${toast.type}`}>{toast.msg}</div>}
     </>
   );
 }
+

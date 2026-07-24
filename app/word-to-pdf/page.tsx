@@ -290,6 +290,109 @@ export default function WordToPdfPage() {
         </div>
       </main>
 
+      {/* ── Content & FAQ section ── */}
+      <div className="tool-content-section">
+        <div className="tool-how-to">
+          <h2>How to Convert Word to PDF</h2>
+          <div className="tool-steps">
+            <div className="tool-step">
+              <div className="tool-step-num">1</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Upload your Word document</div>
+                <div className="tool-step-desc">Click the upload area or drag your .docx file onto the page. PixelForge reads the document directly in your browser — no Word or Microsoft 365 subscription needed. Most standard DOCX formatting including headings, paragraphs, tables, and inline images is supported.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">2</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Preview the document</div>
+                <div className="tool-step-desc">PixelForge renders a preview of your Word document so you can check that the content is being interpreted correctly before converting. Review the text, images, and layout to ensure they look as expected.</div>
+              </div>
+            </div>
+            <div className="tool-step">
+              <div className="tool-step-num">3</div>
+              <div className="tool-step-body">
+                <div className="tool-step-title">Convert to PDF and download</div>
+                <div className="tool-step-desc">Click &quot;Convert to PDF&quot;. The tool uses your browser&apos;s built-in print engine to produce a PDF with proper margins and page breaks. The PDF is generated locally and ready to download immediately — no upload, no waiting.</div>
+              </div>
+            </div>
+          </div>
+          <div className="tool-privacy-note">
+            <span className="tool-privacy-note-icon">🔒</span>
+            <span>
+              <strong>Your Word documents are converted privately, on your device.</strong> Many Word-to-PDF converters work by sending your document to a cloud server for processing. If your DOCX contains proprietary business content, personal information, or confidential contracts, this creates unnecessary exposure. PixelForge converts Word to PDF using the Mammoth.js library and your browser&apos;s native print-to-PDF capability — entirely offline, with no file ever leaving your machine.
+            </span>
+          </div>
+        </div>
+
+        <div className="tool-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <div className="faq-question">Does PixelForge support .doc files (older Word format)?</div>
+              <div className="faq-answer">Currently, PixelForge supports the modern .docx format (Word 2007 and later). The older .doc binary format is not supported. If you have a .doc file, open it in Word or Google Docs and save/export it as .docx first, then convert it here.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Why does the PDF look different from my original Word document?</div>
+              <div className="faq-answer">PixelForge converts Word documents using browser-based HTML rendering, which may not perfectly replicate all Word-specific formatting — particularly complex layouts, custom fonts not available in the browser, or advanced page layout features. For pixel-perfect output, Microsoft Word or LibreOffice&apos;s own &quot;Save as PDF&quot; feature will give the most accurate result.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Can I convert a Word document with images to PDF?</div>
+              <div className="faq-answer">Yes. Images embedded in your .docx file will be included in the PDF output. The layout may vary slightly depending on how images are anchored in the Word document, but inline images generally convert well.</div>
+            </div>
+            <div className="faq-item">
+              <div className="faq-question">Do I need Microsoft Word installed to use this tool?</div>
+              <div className="faq-answer">No. PixelForge uses the open-source Mammoth.js library to parse and render .docx files entirely in your browser. You do not need Microsoft Word, Microsoft 365, or any other software installed on your device.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does PixelForge support .doc files (older Word format)?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Currently, PixelForge supports the modern .docx format (Word 2007 and later). For .doc files, open them in Word or Google Docs and save as .docx first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does the PDF look different from my original Word document?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PixelForge converts using browser-based HTML rendering, which may not replicate all Word-specific formatting. For pixel-perfect output, use Microsoft Word's own Save as PDF feature."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert a Word document with images to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Images embedded in your .docx file will be included in the PDF output. Inline images generally convert well."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need Microsoft Word installed to convert Word to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. PixelForge uses the open-source Mammoth.js library to parse .docx files entirely in your browser. No Microsoft Word or Microsoft 365 subscription required."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Toast */}
       {toast && (
         <div className={`toast toast-${toast.type}`}>
@@ -299,3 +402,4 @@ export default function WordToPdfPage() {
     </>
   );
 }
+
